@@ -40,21 +40,58 @@ typedef NS_ENUM(NSInteger, TEST){
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //测试控制器categroy添加block传值
+//    测试控制器categroy添加block传值
     [self testOfControllerBlockDeliver];
-    //测试按钮复制
+//    测试按钮复制
     [self testOfButtonResponser];
-    //测试md5加密和base64加密解密
-    [self testOfBase64_md5];
-    //手写板测试
-    [self testOfPathView];
-    //测试数组排序用法
-    [self testSortArray];
-    //枚举写法测试
-    [self enumeration_reason];
+//    测试md5加密和base64加密解密
+//    [self testOfBase64_md5];
+//    手写板测试
+//    [self testOfPathView];
+//    测试数组排序用法
+//    [self testSortArray];
+//    枚举写法测试
+//    [self enumeration_reason];
+//    日期比较
+//    [self compareStartTime:@"2015-10-10 10:10:20.433" toEndTime:@"2015-10-10 10:10:10.432" withFormat:@"yyyy/MM/dd HH:mm:ss.zzz"];
+    
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
+//    应用间调用
+//    [self openAnotherApp];
+}
+#pragma mark - 应用间跳转
+/**
+ *  ----------------------------------------------------------------------
+ *  应用间跳转
+ *  详细介绍参考博客园
+ *  需要被跳转应用设置info.plist如下：
+ *  URL types --> item --> URL Schemes --> item --> 设置值为(随意命名)com.appName
+ *  此处是：test.name，调用如下
+ */
+- (void)openAnotherApp{
+    NSURL *url = [NSURL URLWithString:@"test.name://"];
+    [[UIApplication sharedApplication] openURL:url];
+}
+#pragma mark - 日期比较
+/**
+ *  ----------------------------------------------------------------------
+ *  日期比较
+ *  时区参数zzz也会计算入时间比较
+ */
+- (NSString *)compareStartTime:(NSString *)start toEndTime:(NSString *)end withFormat:(NSString *)format{
+    //zzz：时区
+    //@"yyyy/MM/dd HH:mm:ss.zzz"
+    //    [self compareStartTime:@"2015-10-10 10:10:20.433" toEndTime:@"2015-10-10 10:10:10.432" withFormat:@"yyyy/MM/dd HH:mm:ss.zzz"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    NSDate *startDate = [dateFormatter dateFromString:start];
+    NSDate *endDate = [dateFormatter dateFromString:end];
+    NSTimeInterval lastInt = [startDate timeIntervalSinceDate:endDate];
+    NSString *last = [@(lastInt) stringValue];
+    NSLog(@"%@",last);
+    return last;
 }
 #pragma mark - 枚举<<写法测试
 /**
