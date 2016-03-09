@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *vc = [ViewController new];
+    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, 100, 40);
+    label.text = @"Main";
+    label.font = [UIFont fontName_Zapfino_Size:14];
+    label.textColor = COLOR_RANDOM;
+    label.textAlignment = NSTextAlignmentCenter;
+    vc.navigationItem.titleView = label;
+    _window.backgroundColor = [UIColor whiteColor];
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 

@@ -1,0 +1,95 @@
+//
+//  PrefixHeader.pch
+//  iOS_CodeDemo
+//
+//  Created by mac book on 16/3/9.
+//  Copyright © 2016年 mac book. All rights reserved.
+//
+//
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//
+//         .............................................
+//                  佛祖保佑             永无BUG
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIViewController+Deliver.h"
+#import "UIButton+Copy.h"
+#import "UIFont+Name.h"
+#import "GTMBase64.h"
+#import "PathView.h"
+
+
+
+/*----------------颜色--------------------------*/
+
+//rgb颜色
+#define COLOR_RGB(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+//随机色
+#define COLOR_RANDOM COLOR_RGB(arc4random()%255,arc4random()%255,arc4random()%255,1.0f)
+
+
+/*---------------字体---------------------------*/
+//字体
+#define FONT_NORMAL FONT_SW(14,-0.2)
+
+
+/*-------------------尺寸--------------------------*/
+#define FONT(number) [UIFont systemFontOfSize:(SCREEN_WIDTH * 0.003125 * number)]
+
+#define FONT_SW(fon,wei) [UIFont systemFontOfSize:(SCREEN_WIDTH * 0.003125 * fon) weight:(SCREEN_WIDTH * 0.003125 * wei)]
+#define UnitWidth SCREEN_WIDTH * 0.003125
+
+/*---------------------尺寸----------------------------------------------*/
+
+//边距
+#define MARGIN(number) (SCREEN_WIDTH * 0.003125 * number)
+
+//屏幕尺寸
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+/*---------------------系统设备相关-----------------------*/
+//获取系统版本
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+#define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]
+#define isIOS4 ([[[UIDevice currentDevice] systemVersion] intValue]==4)
+#define isIOS5 ([[[UIDevice currentDevice] systemVersion] intValue]==5)
+#define isIOS6 ([[[UIDevice currentDevice] systemVersion] intValue]==6)
+#define isAfterIOS4 ([[[UIDevice currentDevice] systemVersion] intValue]>4)
+#define isAfterIOS5 ([[[UIDevice currentDevice] systemVersion] intValue]>5)
+#define isAfterIOS6 ([[[UIDevice currentDevice] systemVersion] intValue]>6)
+#define isAfterIOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define isAfterIOS8 ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+#define isAfterIOS9 ([[UIDevice currentDevice].systemVersion doubleValue] >= 9.0)
+
+//判断是真机还是模拟器
+#if TARGET_OS_IPHONE
+//iPhone Device
+#endif
+#if TARGET_IPHONE_SIMULATOR
+//iPhone Simulator
+#endif
+
+
+
+
+#endif /* PrefixHeader_pch */
