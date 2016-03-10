@@ -51,7 +51,9 @@
 #import "CustomNaviViewController.h"
 
 
-
+/*----------------block--------------------------*/
+//定义一个MACRO，用于blcok内部的弱引用
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 /*----------------颜色--------------------------*/
 
 //rgb颜色

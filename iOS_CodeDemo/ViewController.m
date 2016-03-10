@@ -55,6 +55,8 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self enumeration_reason];
 //    日期比较
 //    [self compareStartTime:@"2015-10-10 10:10:20.433" toEndTime:@"2015-10-10 10:10:10.432" withFormat:@"yyyy/MM/dd HH:mm:ss.zzz"];
+//    获取随机数字和字母组合
+//    [self generateTradeNO];
     
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -63,6 +65,25 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self openAnotherApp];
 //    地图页面
 //    [self pushToMapVC];
+}
+#pragma mark - 获取随机数字和字母组合
+/**
+ *  ----------------------------------------------------------------------
+ *  获取随机数字和字母组合
+ */
+- (NSString *)generateTradeNO
+{
+    static int kNumber = 15;
+    
+    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *resultStr = [[NSMutableString alloc] init];
+    for (int i = 0; i < kNumber; i++)
+    {
+        unsigned index = arc4random() % [sourceStr length];
+        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
+        [resultStr appendString:oneStr];
+    }
+    return resultStr;
 }
 #pragma mark - 地图页面
 /**
