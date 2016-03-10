@@ -1,10 +1,4 @@
-//
-//  UIViewController+Deliver.h
-//  firstNursingWorkers
-//
-//  Created by mac book on 16/3/7.
-//  Copyright © 2016年 HB. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
@@ -52,5 +46,9 @@ typedef void (^SendObject)(id obj);
  *  快捷创建按钮
  */
 - (UIButton *)createCustomerButtonWithTitle:(NSString *)title sel:(SEL)sel frame:(CGRect)frame;
+/**
+ *  创建自定义标题
+ */
+- (void)setUpTitle:(NSString *)title;
 
 @end

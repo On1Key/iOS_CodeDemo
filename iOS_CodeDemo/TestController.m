@@ -6,6 +6,12 @@
 //  Copyright © 2016年 mac book. All rights reserved.
 //
 
+#pragma mark - 添加规范注释
+/**
+ *  ----------------------------------------------------------------------
+ *  添加规范注释
+ */
+
 #import "TestController.h"
 
 @interface TestController ()
@@ -19,7 +25,9 @@
     //测试block回传值
     [self testOfBlockDeliver];
 }
+#pragma mark - 测试block回传值
 /**
+ *  ----------------------------------------------------------------------
  *  测试block回传值
  */
 - (void)testOfBlockDeliver{
@@ -31,5 +39,17 @@
     [self.navigationController popViewControllerAnimated:YES];
     self.sendText = nil;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end

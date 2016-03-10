@@ -1,10 +1,4 @@
-//
-//  UIViewController+Deliver.m
-//  firstNursingWorkers
-//
-//  Created by mac book on 16/3/7.
-//  Copyright © 2016年 HB. All rights reserved.
-//
+
 
 #import "UIViewController+Deliver.h"
 
@@ -48,5 +42,17 @@
     [button addTarget:self action:sel forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     return button;
+}
+/**
+ *  创建自定义标题
+ */
+- (void)setUpTitle:(NSString *)title{
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, 100, 40);
+    label.text = title;
+    label.font = [UIFont fontName_Zapfino_Size:14];
+    label.textColor = COLOR_RANDOM;
+    label.textAlignment = NSTextAlignmentCenter;
+    self.navigationItem.titleView = label;
 }
 @end

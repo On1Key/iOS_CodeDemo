@@ -31,11 +31,24 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+//类扩展
 #import "UIViewController+Deliver.h"
 #import "UIButton+Copy.h"
 #import "UIFont+Name.h"
+#import "NSArray+Log.h"
+#import "NSDictionary+Log.h"
+#import "UIImage+Color.h"
+#import "UIImage+Extension.h"
+#import "UIDevice+DeviceType.h"
+#import "NSString+Extension.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+
+//自定义view或者工具类
 #import "GTMBase64.h"
 #import "PathView.h"
+#import "CustomNavigationBar.h"
+#import "CustomNaviViewController.h"
 
 
 

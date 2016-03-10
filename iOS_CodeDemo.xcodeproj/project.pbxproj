@@ -20,6 +20,18 @@
 		FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603C61C8FF97E001D124F /* UIFont+Name.m */; };
 		FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603CB1C8FFC4E001D124F /* PathView.m */; };
 		FA3603CF1C8FFE09001D124F /* iOS_FontName.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */; };
+		FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4F51C91070D00500523 /* NSArray+Log.m */; };
+		FA40D4FB1C91070D00500523 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4F71C91070D00500523 /* NSDictionary+Log.m */; };
+		FA40D4FC1C91070D00500523 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4F91C91070D00500523 /* UIView+Extension.m */; };
+		FA40D5051C910AB700500523 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4FE1C910AB700500523 /* UIImage+Color.m */; };
+		FA40D5061C910AB700500523 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5001C910AB700500523 /* UIImage+Extension.m */; };
+		FA40D5071C910AB700500523 /* UIDevice+DeviceType.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5021C910AB700500523 /* UIDevice+DeviceType.m */; };
+		FA40D5081C910AB700500523 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5041C910AB700500523 /* NSString+Extension.m */; };
+		FA40D50B1C910D5100500523 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D50A1C910D5100500523 /* MapController.m */; };
+		FA40D50F1C91112400500523 /* MapSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D50E1C91112400500523 /* MapSearchController.m */; };
+		FA40D5121C9118B200500523 /* CustomNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5111C9118B200500523 /* CustomNaviViewController.m */; };
+		FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */; };
+		FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5171C91190B00500523 /* CustomNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +60,30 @@
 		FA3603CA1C8FFC4E001D124F /* PathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathView.h; sourceTree = "<group>"; };
 		FA3603CB1C8FFC4E001D124F /* PathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathView.m; sourceTree = "<group>"; };
 		FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iOS_FontName.gif; sourceTree = "<group>"; };
+		FA40D4F41C91070D00500523 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		FA40D4F51C91070D00500523 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		FA40D4F61C91070D00500523 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		FA40D4F71C91070D00500523 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		FA40D4F81C91070D00500523 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		FA40D4F91C91070D00500523 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		FA40D4FD1C910AB700500523 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		FA40D4FE1C910AB700500523 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		FA40D4FF1C910AB700500523 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		FA40D5001C910AB700500523 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		FA40D5011C910AB700500523 /* UIDevice+DeviceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DeviceType.h"; sourceTree = "<group>"; };
+		FA40D5021C910AB700500523 /* UIDevice+DeviceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DeviceType.m"; sourceTree = "<group>"; };
+		FA40D5031C910AB700500523 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		FA40D5041C910AB700500523 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		FA40D5091C910D5100500523 /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapController.h; sourceTree = "<group>"; };
+		FA40D50A1C910D5100500523 /* MapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapController.m; sourceTree = "<group>"; };
+		FA40D50D1C91112400500523 /* MapSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapSearchController.h; sourceTree = "<group>"; };
+		FA40D50E1C91112400500523 /* MapSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapSearchController.m; sourceTree = "<group>"; };
+		FA40D5101C9118B200500523 /* CustomNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNaviViewController.h; sourceTree = "<group>"; };
+		FA40D5111C9118B200500523 /* CustomNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNaviViewController.m; sourceTree = "<group>"; };
+		FA40D5131C9118CD00500523 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		FA40D5161C91190B00500523 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
+		FA40D5171C91190B00500523 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +121,11 @@
 				FA3603791C8FCD4F001D124F /* AppDelegate.m */,
 				FA36037B1C8FCD4F001D124F /* ViewController.h */,
 				FA36037C1C8FCD4F001D124F /* ViewController.m */,
+				FA3603BA1C8FEC25001D124F /* TestController.h */,
+				FA3603BB1C8FEC25001D124F /* TestController.m */,
+				FA40D50C1C9110F900500523 /* MapVC */,
 				FA3603C91C8FFC3B001D124F /* CusView */,
 				FA3603C01C8FF6E5001D124F /* Library */,
-				FA3603B91C8FEBDF001D124F /* TestVC */,
 				FA3603B51C8FEB87001D124F /* Categroy */,
 				FA3603CD1C8FFDEB001D124F /* Resource */,
 				FA36037E1C8FCD4F001D124F /* Main.storyboard */,
@@ -110,23 +148,30 @@
 		FA3603B51C8FEB87001D124F /* Categroy */ = {
 			isa = PBXGroup;
 			children = (
+				FA40D4F41C91070D00500523 /* NSArray+Log.h */,
+				FA40D4F51C91070D00500523 /* NSArray+Log.m */,
+				FA40D4F61C91070D00500523 /* NSDictionary+Log.h */,
+				FA40D4F71C91070D00500523 /* NSDictionary+Log.m */,
+				FA40D4F81C91070D00500523 /* UIView+Extension.h */,
+				FA40D4F91C91070D00500523 /* UIView+Extension.m */,
 				FA3603B61C8FEB99001D124F /* UIViewController+Deliver.h */,
 				FA3603B71C8FEB99001D124F /* UIViewController+Deliver.m */,
+				FA40D5131C9118CD00500523 /* UIBarButtonItem+Extension.h */,
+				FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */,
 				FA3603C51C8FF97E001D124F /* UIFont+Name.h */,
 				FA3603C61C8FF97E001D124F /* UIFont+Name.m */,
 				FA3603BD1C8FF0E1001D124F /* UIButton+Copy.h */,
 				FA3603BE1C8FF0E1001D124F /* UIButton+Copy.m */,
+				FA40D4FD1C910AB700500523 /* UIImage+Color.h */,
+				FA40D4FE1C910AB700500523 /* UIImage+Color.m */,
+				FA40D4FF1C910AB700500523 /* UIImage+Extension.h */,
+				FA40D5001C910AB700500523 /* UIImage+Extension.m */,
+				FA40D5011C910AB700500523 /* UIDevice+DeviceType.h */,
+				FA40D5021C910AB700500523 /* UIDevice+DeviceType.m */,
+				FA40D5031C910AB700500523 /* NSString+Extension.h */,
+				FA40D5041C910AB700500523 /* NSString+Extension.m */,
 			);
 			name = Categroy;
-			sourceTree = "<group>";
-		};
-		FA3603B91C8FEBDF001D124F /* TestVC */ = {
-			isa = PBXGroup;
-			children = (
-				FA3603BA1C8FEC25001D124F /* TestController.h */,
-				FA3603BB1C8FEC25001D124F /* TestController.m */,
-			);
-			name = TestVC;
 			sourceTree = "<group>";
 		};
 		FA3603C01C8FF6E5001D124F /* Library */ = {
@@ -142,6 +187,10 @@
 		FA3603C91C8FFC3B001D124F /* CusView */ = {
 			isa = PBXGroup;
 			children = (
+				FA40D5101C9118B200500523 /* CustomNaviViewController.h */,
+				FA40D5111C9118B200500523 /* CustomNaviViewController.m */,
+				FA40D5161C91190B00500523 /* CustomNavigationBar.h */,
+				FA40D5171C91190B00500523 /* CustomNavigationBar.m */,
 				FA3603CA1C8FFC4E001D124F /* PathView.h */,
 				FA3603CB1C8FFC4E001D124F /* PathView.m */,
 			);
@@ -154,6 +203,17 @@
 				FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		FA40D50C1C9110F900500523 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA40D5091C910D5100500523 /* MapController.h */,
+				FA40D50A1C910D5100500523 /* MapController.m */,
+				FA40D50D1C91112400500523 /* MapSearchController.h */,
+				FA40D50E1C91112400500523 /* MapSearchController.m */,
+			);
+			name = MapVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,14 +288,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3603B81C8FEB99001D124F /* UIViewController+Deliver.m in Sources */,
+				FA40D5061C910AB700500523 /* UIImage+Extension.m in Sources */,
+				FA40D5071C910AB700500523 /* UIDevice+DeviceType.m in Sources */,
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
+				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
 				FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */,
 				FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */,
+				FA40D50B1C910D5100500523 /* MapController.m in Sources */,
+				FA40D5121C9118B200500523 /* CustomNaviViewController.m in Sources */,
+				FA40D4FB1C91070D00500523 /* NSDictionary+Log.m in Sources */,
+				FA40D4FC1C91070D00500523 /* UIView+Extension.m in Sources */,
+				FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */,
+				FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */,
 				FA3603771C8FCD4F001D124F /* main.m in Sources */,
+				FA40D50F1C91112400500523 /* MapSearchController.m in Sources */,
 				FA3603BF1C8FF0E1001D124F /* UIButton+Copy.m in Sources */,
 				FA3603BC1C8FEC25001D124F /* TestController.m in Sources */,
 				FA3603C31C8FF6F6001D124F /* GTMBase64.m in Sources */,
+				FA40D5051C910AB700500523 /* UIImage+Color.m in Sources */,
+				FA40D5081C910AB700500523 /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

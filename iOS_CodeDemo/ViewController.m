@@ -14,6 +14,7 @@
 
 #import "ViewController.h"
 #import "TestController.h"
+#import "MapController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton *btn_test;
@@ -60,6 +61,17 @@ typedef NS_ENUM(NSInteger, TEST){
     [self.view endEditing:YES];
 //    应用间调用
 //    [self openAnotherApp];
+//    地图页面
+//    [self pushToMapVC];
+}
+#pragma mark - 地图页面
+/**
+ *  ----------------------------------------------------------------------
+ *  地图页面
+ */
+- (void)pushToMapVC{
+    MapController *map = [MapController new];
+    [self.navigationController pushViewController:map animated:YES];
 }
 #pragma mark - 应用间跳转
 /**
@@ -181,5 +193,6 @@ typedef NS_ENUM(NSInteger, TEST){
     };
     [self.navigationController pushViewController:test animated:YES];
 }
+
 
 @end
