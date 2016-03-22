@@ -16,4 +16,8 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 @property (nonatomic) CGSize size;
+/**
+ *  递归获取view的第一响应者
+ */
+- (UIView *)findFirstResponder;
 @end
