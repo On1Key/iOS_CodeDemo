@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA191DF61CA12FA7006DBB7A /* UITableView+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */; };
 		FA3603771C8FCD4F001D124F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603761C8FCD4F001D124F /* main.m */; };
 		FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603791C8FCD4F001D124F /* AppDelegate.m */; };
 		FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA36037C1C8FCD4F001D124F /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA191DF41CA12FA7006DBB7A /* UITableView+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Keyboard.h"; sourceTree = "<group>"; };
+		FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Keyboard.m"; sourceTree = "<group>"; };
 		FA3603721C8FCD4F001D124F /* iOS_CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA3603761C8FCD4F001D124F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA3603781C8FCD4F001D124F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				FA40D4F51C91070D00500523 /* NSArray+Log.m */,
 				FA40D4F61C91070D00500523 /* NSDictionary+Log.h */,
 				FA40D4F71C91070D00500523 /* NSDictionary+Log.m */,
+				FA191DF41CA12FA7006DBB7A /* UITableView+Keyboard.h */,
+				FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */,
 				FA40D4F81C91070D00500523 /* UIView+Extension.h */,
 				FA40D4F91C91070D00500523 /* UIView+Extension.m */,
 				FA3603B61C8FEB99001D124F /* UIViewController+Deliver.h */,
@@ -297,6 +302,7 @@
 				FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */,
 				FA40D50B1C910D5100500523 /* MapController.m in Sources */,
 				FA40D5121C9118B200500523 /* CustomNaviViewController.m in Sources */,
+				FA191DF61CA12FA7006DBB7A /* UITableView+Keyboard.m in Sources */,
 				FA40D4FB1C91070D00500523 /* NSDictionary+Log.m in Sources */,
 				FA40D4FC1C91070D00500523 /* UIView+Extension.m in Sources */,
 				FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */,

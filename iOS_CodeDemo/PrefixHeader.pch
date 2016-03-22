@@ -43,6 +43,7 @@
 #import "NSString+Extension.h"
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UITableView+Keyboard.h"
 
 //自定义view或者工具类
 #import "GTMBase64.h"
