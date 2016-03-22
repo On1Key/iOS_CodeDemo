@@ -50,5 +50,12 @@ typedef void (^SendObject)(id obj);
  *  创建自定义标题
  */
 - (void)setUpTitle:(NSString *)title;
+/**
+ *  隐藏键盘蒙板
+ */
+- (void)showMask;
+//+ (void)showMaskWithTarget:(id)target;
+//- (void)showMaskCompletion:(void (^)())finish;
+//+ (void)showMaskWithTarget:(id)target completion:(void (^)())finish;
 
 @end
