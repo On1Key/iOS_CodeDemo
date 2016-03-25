@@ -54,6 +54,7 @@ typedef void (^SendObject)(id obj);
  *  隐藏键盘蒙板
  */
 - (void)showMask;
+- (void)hideAllMask;
 //+ (void)showMaskWithTarget:(id)target;
 //- (void)showMaskCompletion:(void (^)())finish;
 //+ (void)showMaskWithTarget:(id)target completion:(void (^)())finish;

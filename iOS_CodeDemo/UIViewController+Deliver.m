@@ -1,6 +1,7 @@
 
 
 #define COLOR_MASK [UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:0.5]
+#define BACK_TAG 10101010
 
 #import "UIViewController+Deliver.h"
 
@@ -60,6 +61,7 @@
 + (void)showMaskWithTarget:(id)target completion:(void (^)())finish{
     UIView *backView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     backView.backgroundColor = COLOR_MASK;
+    backView.tag = BACK_TAG;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(hideView:)];
     //    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(hideView:)];
     //    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hideView:)];
@@ -81,6 +83,14 @@
 }
 - (void)showMask{
     [UIViewController showMaskWithTarget:self completion:nil];
+}
+- (void)hideAllMask{
+    for (UIView *subView in [UIApplication sharedApplication].keyWindow.subviews) {
+        if (subView.tag == BACK_TAG) {
+            subView.hidden = YES;
+            [subView removeFromSuperview];
+        }
+    }
 }
 - (void)hideView:(UIGestureRecognizer *)ges{
     UIView *backview = ges.view;
