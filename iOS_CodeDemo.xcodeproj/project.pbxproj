@@ -33,6 +33,7 @@
 		FA40D5121C9118B200500523 /* CustomNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5111C9118B200500523 /* CustomNaviViewController.m */; };
 		FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */; };
 		FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5171C91190B00500523 /* CustomNavigationBar.m */; };
+		FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		FA40D5161C91190B00500523 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationBar.h; sourceTree = "<group>"; };
 		FA40D5171C91190B00500523 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
+		FA4966BD1CA7664C00F027C1 /* KeyWordsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyWordsView.h; sourceTree = "<group>"; };
+		FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyWordsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				FA40D5111C9118B200500523 /* CustomNaviViewController.m */,
 				FA40D5161C91190B00500523 /* CustomNavigationBar.h */,
 				FA40D5171C91190B00500523 /* CustomNavigationBar.m */,
+				FA4966BD1CA7664C00F027C1 /* KeyWordsView.h */,
+				FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */,
 				FA3603CA1C8FFC4E001D124F /* PathView.h */,
 				FA3603CB1C8FFC4E001D124F /* PathView.m */,
 			);
@@ -298,6 +303,7 @@
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
 				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
+				FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */,
 				FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */,
 				FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */,
 				FA40D50B1C910D5100500523 /* MapController.m in Sources */,
