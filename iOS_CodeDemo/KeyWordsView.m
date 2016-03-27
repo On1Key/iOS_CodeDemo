@@ -7,19 +7,11 @@
 //
 
 
-//label高度
-#define SUB_HEIGHT 20.f
-//label内边距 / 2
-#define SUB_PADDING 5.f
-//lable 外边距
-#define SUB_MARGIN 5.f
-//label圆角
-#define SUB_LAYER_RADIOUS 5.f
-//label字号
-#define SUB_FONT [UIFont systemFontOfSize:13]
-//控件宽度
-#define SELF_WIDTH SCREEN_WIDTH - 30
-
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define DEFAULT_FONT [UIFont systemFontOfSize:14]
+#define DEFAULT_COLOR_BACKGROUND [UIColor whiteColor]
+#define DEFAULT_COLOR_TEXT [UIColor blackColor]
 
 
 #import "KeyWordsView.h"
@@ -62,57 +54,70 @@
         UILabel *keyWordLabel = [[UILabel alloc] init];
         [self layoutKeyWordsLabelAttributeToLabel:keyWordLabel];
         keyWordLabel.text = keyWords[i];
-        keyWordLabel.numberOfLines = 0;
+//        keyWordLabel.numberOfLines = 0;
         [self addSubview:keyWordLabel];
         [self.keyWordsLables addObject:keyWordLabel];
     }
     
 }
 - (void)layoutKeyWordsLabelAttributeToLabel:(UILabel *)keyWordLabel{
-    keyWordLabel.font = self.attributes[NSFontAttributeName] ? self.attributes[NSFontAttributeName] : SUB_FONT;
-    keyWordLabel.textColor = self.attributes[NSForegroundColorAttributeName] ? self.attributes[NSForegroundColorAttributeName] : [UIColor redColor];
-//    NSLog(@"%@--%@",keyWordLabel.textColor,self.textColor);
-    keyWordLabel.backgroundColor = self.attributes[NSBackgroundColorAttributeName] ? self.attributes[NSBackgroundColorAttributeName] : [UIColor brownColor];
-    keyWordLabel.textAlignment = self.textAlignment;
+    keyWordLabel.font = self.attributes[KWAttributesFont] ? self.attributes[KWAttributesFont] : DEFAULT_FONT
+    ;
+    keyWordLabel.backgroundColor = self.attributes[KWAttributesBackgroundColor] ? self.attributes[KWAttributesBackgroundColor] : COLOR_RANDOM;
+    keyWordLabel.textColor = self.attributes[KWAttributesTextColor] ? self.attributes[KWAttributesTextColor] : DEFAULT_COLOR_TEXT;
+    keyWordLabel.textAlignment = [_attributes[KWAttributesTextAlignment] intValue];
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    if (self.column == 0) {
+    
+    int column = [self.attributes[KWAttributesColumn] intValue];
+    CGFloat maxWidth = [self.attributes[KWAttributesMaxWidth] floatValue] ? [self.attributes[KWAttributesMaxWidth] floatValue] : SCREEN_WIDTH;
+    CGFloat lineHeight = [self.attributes[KWAttributesLineHeight] floatValue];
+    CGFloat insidePadding = [self.attributes[KWAttributesInsidePadding] floatValue];
+    CGFloat lineSpacing = [self.attributes[KWAttributesLineSpacing] floatValue];
+    CGFloat outsideMargin = [self.attributes[KWAttributesOutsideMargin] floatValue];
+    float radious = [self.attributes[KWAttributesRadious] floatValue];
+    UIFont *font = self.attributes[KWAttributesFont] ? self.attributes[KWAttributesFont] : DEFAULT_FONT;
+    
+    if (column <= 1) {
         CGFloat beginX = 0;
         CGFloat beginY = 0;
         for (int i = 0; i < self.keyWordsLables.count; i ++) {
             
             UILabel *keyWordLabel = self.keyWordsLables[i];
             
+            CGSize keyWordSize = [keyWordLabel.text boundingRectWithSize:CGSizeMake(maxWidth, 999) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: font} context:nil].size;
             
-            CGSize keyWordSize = [keyWordLabel.text boundingRectWithSize:CGSizeMake(SELF_WIDTH, SCREEN_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: keyWordLabel.font} context:nil].size;
+            CGFloat standardRowHeight = [@"" boundingRectWithSize:CGSizeMake(maxWidth, 999) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: font} context:nil].size.height;
             
-            CGFloat keyLabWidth = keyWordSize.width + SUB_PADDING;
+            CGFloat keyLabWidth = keyWordSize.width + insidePadding;
             
-            if (keyLabWidth >= SELF_WIDTH) {
-                keyLabWidth = SELF_WIDTH;
+            /**
+             *  默认行高设置
+             */
+            CGFloat keyLabHeight = lineHeight ? lineHeight : keyWordSize.height;
+            
+            //纠偏设置
+            //在行宽超过最大宽度时，设置行宽为最大行宽，行高为一行文本的行高
+            if (keyLabWidth >= maxWidth) {
+                keyLabWidth = maxWidth;
+                keyLabHeight = lineHeight ? lineHeight : standardRowHeight;
             }
             
-            CGFloat keyLabHeight = SUB_HEIGHT;
-//            if (keyWordSize.height >= SUB_HEIGHT) {
-//                keyLabHeight = keyWordSize.height;
-//            }else{
-//                keyLabHeight = SUB_HEIGHT;
-//            }
             keyWordLabel.frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
             
             
-            beginX = CGRectGetMaxX(keyWordLabel.frame) + SUB_MARGIN;
-            if (beginX>= SELF_WIDTH) {
+            beginX = CGRectGetMaxX(keyWordLabel.frame) + outsideMargin;
+            if (beginX >= maxWidth) {
                 
                 beginX = 0;
-                beginY = CGRectGetMaxY(keyWordLabel.frame) + SUB_MARGIN;
+                beginY = CGRectGetMaxY(keyWordLabel.frame) + lineSpacing;
                 keyWordLabel.frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
-                beginX = CGRectGetMaxX(keyWordLabel.frame) + SUB_MARGIN;
+                beginX = CGRectGetMaxX(keyWordLabel.frame) + outsideMargin;
             }
-            keyWordLabel.layer.cornerRadius = self.radious;
+            keyWordLabel.layer.cornerRadius = radious;
             keyWordLabel.layer.masksToBounds = YES;
             
         }
@@ -122,13 +127,13 @@
         for (int i = 0; i < self.keyWordsLables.count; i ++) {
             UILabel *keyWordLabel = self.keyWordsLables[i];
             
-            CGFloat labWidth = SELF_WIDTH / self.column;
-            CGFloat labHeight = SUB_HEIGHT;
-            CGFloat labX = (i % self.column) * labWidth;
-            CGFloat labY = (i / self.column) * labHeight;
+            CGFloat labWidth = maxWidth / column;
+            CGFloat labHeight = lineHeight;
+            CGFloat labX = (i % column) * labWidth;
+            CGFloat labY = (i / column) * labHeight;
             
             keyWordLabel.frame = CGRectMake(labX, labY, labWidth, labHeight);
-            keyWordLabel.layer.cornerRadius = self.radious;
+            keyWordLabel.layer.cornerRadius = radious;
             keyWordLabel.layer.masksToBounds = YES;
         }
         
@@ -138,49 +143,19 @@
     
 }
 
-+ (CGFloat)getHeight:(NSArray*)arr column:(int)column{
++ (CGFloat)getHeight:(NSArray<NSString *> *)arr attributes:(NSDictionary *)attributes{
     
-    if (column != 0) {
+    int column = [attributes[KWAttributesColumn] intValue];
+    CGFloat maxWidth = [attributes[KWAttributesMaxWidth] floatValue] ? [attributes[KWAttributesMaxWidth] floatValue] : SCREEN_WIDTH;
+    CGFloat lineHeight = [attributes[KWAttributesLineHeight] floatValue];
+    CGFloat insidePadding = [attributes[KWAttributesInsidePadding] floatValue];
+    CGFloat lineSpacing = [attributes[KWAttributesLineSpacing] floatValue];
+    CGFloat outsideMargin = [attributes[KWAttributesOutsideMargin] floatValue];
+    UIFont *font = attributes[KWAttributesFont] ? attributes[KWAttributesFont] : DEFAULT_FONT;
+    
+    if (column > 1) {
         int add = arr.count % column == 0 ? 0 : 1;
-        return ((arr.count / column) + add) * SUB_HEIGHT;
-    }else{
-        CGFloat beginX = 0;
-        CGFloat beginY = 0;
-        CGRect frame = CGRectZero;
-        for (int i = 0; i < arr.count; i ++) {
-            
-            NSString *keyWordLabelText = arr[i];
-            
-            CGSize keyWordSize = [keyWordLabelText boundingRectWithSize:CGSizeMake(SELF_WIDTH, SCREEN_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: SUB_FONT} context:nil].size;
-            
-            CGFloat keyLabWidth = keyWordSize.width + SUB_PADDING;
-            CGFloat keyLabHeight = SUB_HEIGHT;
-//            if (keyWordSize.height >= SUB_HEIGHT) {
-//                keyLabHeight = keyWordSize.height;
-//            }else{
-//                keyLabHeight = SUB_HEIGHT;
-//            }
-            frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
-            
-            beginX = CGRectGetMaxX(frame) + SUB_MARGIN;
-            if (beginX >= SELF_WIDTH) {
-                beginX = 0;
-                beginY = CGRectGetMaxY(frame) + SUB_MARGIN;
-                frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
-                beginX = CGRectGetMaxX(frame) + SUB_MARGIN;
-            }
-            
-        }
-        return CGRectGetMaxY(frame);
-    }
-    
-}
-+ (CGFloat)getHeight:(NSArray<NSString *> *)arr column:(int)column font:(UIFont*)font padding:(CGFloat)padding margin:(CGFloat)margin maxSubHeight:(CGFloat)maxHeight maxWidth:(CGFloat)maxWidth{
-    
-    
-    if (column != 0) {
-        int add = arr.count % column == 0 ? 0 : 1;
-        return ((arr.count / column) + add) * maxHeight;
+        return ((arr.count / column) + add) * lineHeight;
     }else{
         CGFloat beginX = 0;
         CGFloat beginY = 0;
@@ -191,8 +166,20 @@
             
             CGSize keyWordSize = [keyWordLabelText boundingRectWithSize:CGSizeMake(maxWidth, 999) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font} context:nil].size;
             
-            CGFloat keyLabWidth = keyWordSize.width + padding;
-            CGFloat keyLabHeight = maxHeight;
+            CGFloat standardRowHeight = [@"" boundingRectWithSize:CGSizeMake(maxWidth, 999) options:NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: font} context:nil].size.height;
+            
+            CGFloat keyLabWidth = keyWordSize.width + insidePadding;
+            
+            /**
+             *  默认行高设置
+             */
+            CGFloat keyLabHeight = lineHeight ? lineHeight : keyWordSize.height;
+            //纠偏设置
+            //在行宽超过最大宽度时，设置行宽为最大行宽，行高为一行文本的行高
+            if (keyLabWidth >= maxWidth) {
+                keyLabWidth = maxWidth;
+                keyLabHeight = lineHeight ? lineHeight : standardRowHeight;
+            }
             //            if (keyWordSize.height >= SUB_HEIGHT) {
             //                keyLabHeight = keyWordSize.height;
             //            }else{
@@ -200,18 +187,17 @@
             //            }
             frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
             
-            beginX = CGRectGetMaxX(frame) + margin;
+            beginX = CGRectGetMaxX(frame) + outsideMargin;
             if (beginX >= maxWidth) {
                 beginX = 0;
-                beginY = CGRectGetMaxY(frame) + margin;
+                beginY = CGRectGetMaxY(frame) + lineSpacing;
                 frame = CGRectMake(beginX, beginY, keyLabWidth, keyLabHeight);
-                beginX = CGRectGetMaxX(frame) + margin;
+                beginX = CGRectGetMaxX(frame) + outsideMargin;
             }
             
         }
         return CGRectGetMaxY(frame);
     }
-    
 }
 
 @end

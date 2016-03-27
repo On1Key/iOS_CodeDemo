@@ -41,12 +41,14 @@ typedef NS_ENUM(NSInteger, TEST){
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    NSDictionary *dic = @{KWAttributesTextColor:[UIColor lightGrayColor]};
+//    self.view.backgroundColor = dic[KWAttributesTextColor];
 //    字符串长度的view
     [self setUpKeyWordsView];
 //    测试控制器categroy添加block传值
-    [self testOfControllerBlockDeliver];
+//    [self testOfControllerBlockDeliver];
 //    测试按钮复制
-    [self testOfButtonResponser];
+//    [self testOfButtonResponser];
 //    测试md5加密和base64加密解密
 //    [self testOfBase64_md5];
 //    手写板测试
@@ -67,6 +69,7 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self openAnotherApp];
 //    地图页面
 //    [self pushToMapVC];
+    
 }
 #pragma mark - 自定义关键词排列view，字符串长度的view
 /**
@@ -74,14 +77,16 @@ typedef NS_ENUM(NSInteger, TEST){
  *  字符串长度的view
  */
 - (void)setUpKeyWordsView{
-    NSArray *arr = @[@"撒大声地",@"爱上当",@"实打实",@"按时到岗晴儿跟晴儿跟啊实打实的gas的gas的gas的gas的gas的晴儿跟晴儿跟和妻儿打败对方把父亲而被",@"阿萨斯噶啥东嘎",@"是打发斯蒂芬",@"爱上当上",@"阿斯顿噶尔",@"阿斯顿嘎斯蛋糕（）"];
-    CGFloat maxWidth = SCREEN_WIDTH - 30;
-    CGFloat height = [KeyWordsView getHeight:arr column:0 font:[UIFont systemFontOfSize:13] padding:5 margin:5 maxSubHeight:20 maxWidth:maxWidth];
+    NSArray *arr = @[@"撒大声地",@"爱上当",@"实打实",@"玩儿反而和妻儿和妻儿和妻儿啊飒飒大师大师的嘎嘎",@"阿司的风格的风格风格是地方东嘎",@"是打发斯蒂芬",@"爱上是对方复和史蒂夫是东风公司的分公司答复当上",@"阿斯顿噶尔",@"阿斯顿嘎斯蛋糕（）"];
+    CGFloat maxWidth = SCREEN_WIDTH;
+//    CGFloat height = [KeyWordsView getHeight:arr column:0 font:[UIFont systemFontOfSize:13] padding:5 margin:5 maxSubHeight:20 maxWidth:maxWidth];
+    NSDictionary *attributes = @{KWAttributesMaxWidth:@(maxWidth)};
+    CGFloat height = [KeyWordsView getHeight:arr attributes:attributes];
     
     KeyWordsView *keyWords = [[KeyWordsView alloc] initWithFrame:CGRectMake(15, 300, maxWidth, height)];
     keyWords.backgroundColor = [UIColor lightGrayColor];
     keyWords.keyWords = arr;
-    keyWords.attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSBackgroundColorAttributeName:COLOR_RANDOM};
+    keyWords.attributes = attributes;
     [self.view addSubview:keyWords];
 }
 #pragma mark - 获取随机数字和字母组合
