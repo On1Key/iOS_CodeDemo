@@ -5,6 +5,10 @@
 //  Created by mac book on 16/3/16.
 //  Copyright © 2016年 HB. All rights reserved.
 //
+/**
+ *  备注：
+ *  凡是设置数字的属性，均存为NSNumber
+ */
 
 /**
  *  字体，默认14号

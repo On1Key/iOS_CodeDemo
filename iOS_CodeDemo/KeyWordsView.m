@@ -63,7 +63,7 @@
 - (void)layoutKeyWordsLabelAttributeToLabel:(UILabel *)keyWordLabel{
     keyWordLabel.font = self.attributes[KWAttributesFont] ? self.attributes[KWAttributesFont] : DEFAULT_FONT
     ;
-    keyWordLabel.backgroundColor = self.attributes[KWAttributesBackgroundColor] ? self.attributes[KWAttributesBackgroundColor] : COLOR_RANDOM;
+    keyWordLabel.backgroundColor = self.attributes[KWAttributesBackgroundColor] ? self.attributes[KWAttributesBackgroundColor] : DEFAULT_COLOR_BACKGROUND;
     keyWordLabel.textColor = self.attributes[KWAttributesTextColor] ? self.attributes[KWAttributesTextColor] : DEFAULT_COLOR_TEXT;
     keyWordLabel.textAlignment = [_attributes[KWAttributesTextAlignment] intValue];
 }

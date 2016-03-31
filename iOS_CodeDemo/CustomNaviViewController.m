@@ -62,7 +62,12 @@
         UIBarButtonItem *rightBarButon =[[UIBarButtonItem alloc]initWithTitle:@"ToRoot" style:UIBarButtonItemStyleDone target:self action:@selector(complateClick)];
         viewController.navigationItem.rightBarButtonItem = rightBarButon;
     }
-    [super pushViewController:viewController animated:animated];
+//    如何防止navigation多次push一个页面?有时候网慢，点了一下没反应，用户可能就多点几下，这时候会打开好几个一样的页面:
+//    
+//    写了一个navigation基类,重写了push方法:传进来要push的控制器,然后判断该控制器是否已经压入栈顶,
+    if (![[super topViewController] isKindOfClass:[viewController class]]) {
+        [super pushViewController:viewController animated:animated];
+    }
     
 }
 

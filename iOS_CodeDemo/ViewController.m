@@ -80,10 +80,10 @@ typedef NS_ENUM(NSInteger, TEST){
     NSArray *arr = @[@"撒大声地",@"爱上当",@"实打实",@"玩儿反而和妻儿和妻儿和妻儿啊飒飒大师大师的嘎嘎",@"阿司的风格的风格风格是地方东嘎",@"是打发斯蒂芬",@"爱上是对方复和史蒂夫是东风公司的分公司答复当上",@"阿斯顿噶尔",@"阿斯顿嘎斯蛋糕（）"];
     CGFloat maxWidth = SCREEN_WIDTH;
 //    CGFloat height = [KeyWordsView getHeight:arr column:0 font:[UIFont systemFontOfSize:13] padding:5 margin:5 maxSubHeight:20 maxWidth:maxWidth];
-    NSDictionary *attributes = @{KWAttributesMaxWidth:@(maxWidth)};
+    NSDictionary *attributes = @{KWAttributesMaxWidth:@(maxWidth),KWAttributesFont:[UIFont systemFontOfSize:20],KWAttributesLineHeight:@(30),KWAttributesLineSpacing:@(10),KWAttributesOutsideMargin:@(30)};
     CGFloat height = [KeyWordsView getHeight:arr attributes:attributes];
     
-    KeyWordsView *keyWords = [[KeyWordsView alloc] initWithFrame:CGRectMake(15, 300, maxWidth, height)];
+    KeyWordsView *keyWords = [[KeyWordsView alloc] initWithFrame:CGRectMake(0, 300, maxWidth, height)];
     keyWords.backgroundColor = [UIColor lightGrayColor];
     keyWords.keyWords = arr;
     keyWords.attributes = attributes;
