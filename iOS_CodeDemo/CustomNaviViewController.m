@@ -56,10 +56,13 @@
         // 隐藏底部tabbar
         viewController.hidesBottomBarWhenPushed = YES;
         // 设置导航栏按钮
-        UIBarButtonItem *leftBarButon =[UIBarButtonItem itemWithImageName:@"back" highImageName:@"back" taget:self action:@selector(back)];
-        viewController.navigationItem.leftBarButtonItem = leftBarButon;
+//        UIBarButtonItem *leftBarButon =[UIBarButtonItem itemWithImageName:@"back" highImageName:@"back" taget:self action:@selector(back)];
+        UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(back)];
+        [leftBarButton setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_RANDOM,NSFontAttributeName:[UIFont fontName_Zapfino_Size:13]} forState:UIControlStateNormal];
+        viewController.navigationItem.leftBarButtonItem = leftBarButton;
         
-        UIBarButtonItem *rightBarButon =[[UIBarButtonItem alloc]initWithTitle:@"ToRoot" style:UIBarButtonItemStyleDone target:self action:@selector(complateClick)];
+        UIBarButtonItem *rightBarButon =[[UIBarButtonItem alloc]initWithTitle:@"Root" style:UIBarButtonItemStyleDone target:self action:@selector(complateClick)];
+        [rightBarButon setTitleTextAttributes:@{NSForegroundColorAttributeName: COLOR_RANDOM,NSFontAttributeName:[UIFont fontName_Zapfino_Size:13]} forState:UIControlStateNormal];
         viewController.navigationItem.rightBarButtonItem = rightBarButon;
     }
 //    如何防止navigation多次push一个页面?有时候网慢，点了一下没反应，用户可能就多点几下，这时候会打开好几个一样的页面:

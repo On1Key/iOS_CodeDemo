@@ -35,7 +35,10 @@
 }
 - (void)popBackWithBlcokDeliver{
     NSString *text = [NSString stringWithFormat:@"随机传值测试：%d",arc4random()%100];
-    self.sendText(text);
+    if (self.sendText) {
+        self.sendText(text);
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
     self.sendText = nil;
 }

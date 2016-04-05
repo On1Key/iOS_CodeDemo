@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    ViewController *vc = [ViewController new];
+    MainTableViewController *vc = [MainTableViewController new];
     //此处可以适用一个CustomNaviViewController
     _window.rootViewController = [[CustomNaviViewController alloc] initWithRootViewController:vc];
     [vc setUpTitle:@"Main"];

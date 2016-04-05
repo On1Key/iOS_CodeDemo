@@ -99,10 +99,14 @@
     [self layoutUI];
     [self.locationManager startUpdatingLocation];
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
+- (void)viewDidDisappear:(BOOL)animated{
+    self.navigationController.navigationBar.translucent = NO;
 }
 - (void)viewWillAppear:(BOOL)animated{
+    [self.view endEditing:YES];
+    self.navigationController.navigationBar.translucent = YES;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
 #pragma mark - 系统自带高德定位
