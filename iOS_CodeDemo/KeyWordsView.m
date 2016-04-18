@@ -12,6 +12,7 @@
 #define DEFAULT_FONT [UIFont systemFontOfSize:14]
 #define DEFAULT_COLOR_BACKGROUND [UIColor whiteColor]
 #define DEFAULT_COLOR_TEXT [UIColor blackColor]
+#define DEFAULT_LINE_HEIGHT 30.f
 
 
 #import "KeyWordsView.h"
@@ -74,7 +75,7 @@
     
     int column = [self.attributes[KWAttributesColumn] intValue];
     CGFloat maxWidth = [self.attributes[KWAttributesMaxWidth] floatValue] ? [self.attributes[KWAttributesMaxWidth] floatValue] : SCREEN_WIDTH;
-    CGFloat lineHeight = [self.attributes[KWAttributesLineHeight] floatValue];
+    CGFloat lineHeight = [self.attributes[KWAttributesLineHeight] floatValue] ? [self.attributes[KWAttributesLineHeight] floatValue] :DEFAULT_LINE_HEIGHT;
     CGFloat insidePadding = [self.attributes[KWAttributesInsidePadding] floatValue];
     CGFloat lineSpacing = [self.attributes[KWAttributesLineSpacing] floatValue];
     CGFloat outsideMargin = [self.attributes[KWAttributesOutsideMargin] floatValue];

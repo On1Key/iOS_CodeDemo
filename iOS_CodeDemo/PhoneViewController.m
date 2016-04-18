@@ -19,6 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(50, 200, SCREEN_WIDTH - 100, 40);
+    label.textColor = COLOR_RANDOM;
+    label.numberOfLines = 0;
+    label.text = @"点击页面进入系统联系人列表";
+    label.font = [UIFont fontName_Zapfino_Size:14];
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
+    
+    NSLog(@"%@",self.navigationController.topViewController);
+    
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self getIntoSystemPhoneBook];
 }
 //调用系统通讯录界面---------------------------

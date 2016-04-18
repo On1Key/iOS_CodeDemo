@@ -10,7 +10,7 @@
 
 @implementation UIFont (Name)
 + (UIFont *)fontName_Zapfino_Size:(CGFloat)size{
-    UIFont *font = [UIFont fontWithName:@"Zapfino" size:15];
+    UIFont *font = [UIFont fontWithName:@"Zapfino" size:size];
     return font;
 }
 @end

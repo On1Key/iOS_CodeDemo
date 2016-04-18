@@ -12,7 +12,6 @@
 		FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603791C8FCD4F001D124F /* AppDelegate.m */; };
 		FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA36037C1C8FCD4F001D124F /* ViewController.m */; };
 		FA3603801C8FCD4F001D124F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA36037E1C8FCD4F001D124F /* Main.storyboard */; };
-		FA3603821C8FCD4F001D124F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3603811C8FCD4F001D124F /* Assets.xcassets */; };
 		FA3603851C8FCD4F001D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3603831C8FCD4F001D124F /* LaunchScreen.storyboard */; };
 		FA3603B81C8FEB99001D124F /* UIViewController+Deliver.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603B71C8FEB99001D124F /* UIViewController+Deliver.m */; };
 		FA3603BC1C8FEC25001D124F /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603BB1C8FEC25001D124F /* TestController.m */; };
@@ -37,6 +36,7 @@
 		FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67B5FD1CACBB780069C5C5 /* CommonTool.m */; };
 		FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */; };
 		FA9645A71CAE752C00A5B38B /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A61CAE752C00A5B38B /* PhoneViewController.m */; };
+		FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4C4551CB38C400057CF1E /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,6 @@
 		FA36037B1C8FCD4F001D124F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FA36037C1C8FCD4F001D124F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FA36037F1C8FCD4F001D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA3603811C8FCD4F001D124F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3603841C8FCD4F001D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA3603861C8FCD4F001D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3603B41C8FEB6F001D124F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		FA9645A51CAE752C00A5B38B /* PhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneViewController.h; sourceTree = "<group>"; };
 		FA9645A61CAE752C00A5B38B /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
+		FAA4C4551CB38C400057CF1E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +148,8 @@
 				FA3603B51C8FEB87001D124F /* Categroy */,
 				FA3603CD1C8FFDEB001D124F /* Resource */,
 				FA36037E1C8FCD4F001D124F /* Main.storyboard */,
-				FA3603811C8FCD4F001D124F /* Assets.xcassets */,
 				FA3603831C8FCD4F001D124F /* LaunchScreen.storyboard */,
+				FAA4C4551CB38C400057CF1E /* Media.xcassets */,
 				FA3603861C8FCD4F001D124F /* Info.plist */,
 				FA3603751C8FCD4F001D124F /* Supporting Files */,
 			);
@@ -299,8 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3603851C8FCD4F001D124F /* LaunchScreen.storyboard in Resources */,
-				FA3603821C8FCD4F001D124F /* Assets.xcassets in Resources */,
 				FA3603CF1C8FFE09001D124F /* iOS_FontName.gif in Resources */,
+				FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */,
 				FA3603801C8FCD4F001D124F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

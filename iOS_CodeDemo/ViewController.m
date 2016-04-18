@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, TEST){
 //    NSDictionary *dic = @{KWAttributesTextColor:[UIColor lightGrayColor]};
 //    self.view.backgroundColor = dic[KWAttributesTextColor];
 //    字符串长度的view
-    [self setUpKeyWordsView];
+//    [self setUpKeyWordsView];
 //    测试控制器categroy添加block传值
 //    [self testOfControllerBlockDeliver];
 //    测试按钮复制
