@@ -1,9 +1,23 @@
+//
+//  UIViewController+Deliver.m
+//  firstNursingWorkers
+//
+//  Created by mac book on 16/3/7.
+//  Copyright © 2016年 HB. All rights reserved.
+//
 
-
-#define COLOR_MASK [UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:0.5]
-#define BACK_TAG 10101010
+#define COLOR_MASK [UIColor colorWithRed:0.922 green:0.922 blue:0.945 alpha:0]
 
 #import "UIViewController+Deliver.h"
+
+typedef void (^Completion)();
+
+@interface UIViewController()
+/**
+ *  点击事件
+ */
+@property (nonatomic, copy) Completion complete;
+@end
 
 @implementation UIViewController (Deliver)
 - (SendText)sendText{
@@ -30,7 +44,70 @@
 - (void)setSendObject:(SendObject)sendObject{
     objc_setAssociatedObject(self, @selector(sendObject), sendObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
+- (Completion)complete{
+    return objc_getAssociatedObject(self, @selector(complete));
+}
+- (void)setComplete:(Completion)complete{
+    objc_setAssociatedObject(self, @selector(complete), complete, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+- (void)showMaskWithTarget:(id)target completion:(void (^)())completion{
+    UIView *backView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    backView.backgroundColor = COLOR_MASK;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(hideView:)];
+    [backView addGestureRecognizer:tap];
+    [[UIApplication sharedApplication].keyWindow addSubview:backView];
+    
+    //完成回调
+    if (completion) {
+        self.complete = ^(){
+            completion();
+        };
+    }
+}
+- (CGPoint)showMaskWithCalculateKeyBoardByStandardFrame:(CGRect)standardFrame oldPoint:(CGPoint)oldPoint{
+    [self showMaskWithTarget:self completion:nil];
+    UIView *resView = [self findFirstResponder:self.view];
+    CGRect resToFrame = [resView convertRect:resView.frame toView:self.view];
+    CGRect keyboardFrame = standardFrame;
+    //            NSLog(@"\n--tv:%@\n--kb:%@",NSStringFromCGRect(tvToView),NSStringFromCGRect(keyboardFrame));
+    if (CGRectGetMaxY(resToFrame) + 64 >= keyboardFrame.origin.y) {
+        CGFloat currY = oldPoint.y;
+        currY += CGRectGetMaxY(resToFrame) + 64 - keyboardFrame.origin.y;
+        
+        return CGPointMake(0, currY);
+    }
+    return oldPoint;
+}
+- (UIView *)findFirstResponder:(UIView *)superView
+{
+    if (superView.isFirstResponder) {
+        return superView;
+    }
+    for (UIView *subView in superView.subviews) {
+        UIView *firstResponder = [self findFirstResponder:subView];
+        if (firstResponder != nil) {
+            return firstResponder;
+        }
+    }
+    return nil;
+}
+-(void)showMaskWithTarget:(id)target{
+    [self showMaskWithTarget:target completion:nil];
+}
+- (void)showMaskCompletion:(void (^)())completion{
+    [self showMaskWithTarget:self completion:completion];
+}
+- (void)showMask{
+    [self showMaskWithTarget:self completion:nil];
+}
+- (void)hideMask{
+    for (UIView *subView in [UIApplication sharedApplication].keyWindow.subviews) {
+        if (subView.tag == 101010) {
+            subView.hidden = YES;
+            [subView removeFromSuperview];
+        }
+    }
+}
 /**
  *  创建自定义按钮
  */
@@ -58,44 +135,20 @@
     label.textAlignment = NSTextAlignmentCenter;
     self.navigationItem.titleView = label;
 }
-+ (void)showMaskWithTarget:(id)target completion:(void (^)())finish{
-    UIView *backView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    backView.backgroundColor = COLOR_MASK;
-    backView.tag = BACK_TAG;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:@selector(hideView:)];
-    //    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(hideView:)];
-    //    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(hideView:)];
-    //    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hideView:)];
-    [backView addGestureRecognizer:tap];
-    //    [backView addGestureRecognizer:pan];
-    //    [backView addGestureRecognizer:press];
-    //    [backView addGestureRecognizer:swipe];
-    [[UIApplication sharedApplication].keyWindow addSubview:backView];
-    if (finish && !backView) {
-        finish();
-    }
-}
-+(void)showMaskWithTarget:(id)target{
-    [UIViewController showMaskWithTarget:target completion:nil];
-}
-- (void)showMaskCompletion:(void (^)())finish{
-    [UIViewController showMaskWithTarget:self completion:finish];
-}
-- (void)showMask{
-    [UIViewController showMaskWithTarget:self completion:nil];
-}
-- (void)hideAllMask{
-    for (UIView *subView in [UIApplication sharedApplication].keyWindow.subviews) {
-        if (subView.tag == BACK_TAG) {
-            subView.hidden = YES;
-            [subView removeFromSuperview];
-        }
-    }
-}
 - (void)hideView:(UIGestureRecognizer *)ges{
     UIView *backview = ges.view;
     [self.view endEditing:YES];
+    [self.navigationItem.titleView endEditing:YES];
     backview.hidden = YES;
+    backview = nil;
     [backview removeFromSuperview];
+    //回调
+    [self completeAction];
+    
+}
+- (void)completeAction{
+    if (self.complete) {
+        self.complete();
+    }
 }
 @end

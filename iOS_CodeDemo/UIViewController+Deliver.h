@@ -1,4 +1,10 @@
-
+//
+//  UIViewController+Deliver.h
+//  firstNursingWorkers
+//
+//  Created by mac book on 16/3/7.
+//  Copyright © 2016年 HB. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
@@ -8,7 +14,7 @@ typedef void (^SendDictionary)(NSDictionary *dict);
 typedef void (^SendArray)(NSArray *arr);
 typedef void (^SendObject)(id obj);
 
-/*  使用范例：
+/*使用范例：
  假如在A页面跳转到B页面，然后将值从B回传至A界面：
  
  在A界面跳转B界面完毕的位置加这个代码：
@@ -19,10 +25,6 @@ typedef void (^SendObject)(id obj);
  在B界面跳转回A界面的位置之前加如下代码：
  self.sendText(@"此处是要传的值");
  传值完毕
- */
-
-/*
- 但是要注意使用的时候防止循环引用
  */
 
 @interface UIViewController (Deliver)
@@ -42,21 +44,30 @@ typedef void (^SendObject)(id obj);
  *  传值id类型数据
  */
 @property (nonatomic, copy) SendObject sendObject;
+
+
 /**
- *  快捷创建按钮
+ *  隐藏键盘蒙板
  */
-- (UIButton *)createCustomerButtonWithTitle:(NSString *)title sel:(SEL)sel frame:(CGRect)frame;
+- (void)showMask;
+- (void)showMaskCompletion:(void (^)())completion;
+/**
+ *  显示键盘蒙板
+ *
+ *  @param standardFrame 键盘的frame
+ *  @param oldPoint      原来的偏移量
+ *
+ *  @return 新的偏移量
+ */
+- (CGPoint)showMaskWithCalculateKeyBoardByStandardFrame:(CGRect)standardFrame oldPoint:(CGPoint)oldPoint;
 /**
  *  创建自定义标题
  */
 - (void)setUpTitle:(NSString *)title;
 /**
- *  隐藏键盘蒙板
+ *  快捷创建按钮
  */
-- (void)showMask;
-- (void)hideAllMask;
-//+ (void)showMaskWithTarget:(id)target;
-//- (void)showMaskCompletion:(void (^)())finish;
-//+ (void)showMaskWithTarget:(id)target completion:(void (^)())finish;
+- (UIButton *)createCustomerButtonWithTitle:(NSString *)title sel:(SEL)sel frame:(CGRect)frame;
+
 
 @end

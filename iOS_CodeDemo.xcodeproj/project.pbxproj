@@ -13,7 +13,6 @@
 		FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA36037C1C8FCD4F001D124F /* ViewController.m */; };
 		FA3603801C8FCD4F001D124F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA36037E1C8FCD4F001D124F /* Main.storyboard */; };
 		FA3603851C8FCD4F001D124F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3603831C8FCD4F001D124F /* LaunchScreen.storyboard */; };
-		FA3603B81C8FEB99001D124F /* UIViewController+Deliver.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603B71C8FEB99001D124F /* UIViewController+Deliver.m */; };
 		FA3603BC1C8FEC25001D124F /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603BB1C8FEC25001D124F /* TestController.m */; };
 		FA3603BF1C8FF0E1001D124F /* UIButton+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603BE1C8FF0E1001D124F /* UIButton+Copy.m */; };
 		FA3603C31C8FF6F6001D124F /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603C21C8FF6F6001D124F /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -33,6 +32,7 @@
 		FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */; };
 		FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5171C91190B00500523 /* CustomNavigationBar.m */; };
 		FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */; };
+		FA5E2E4B1CFA8EC400EE6865 /* UIViewController+Deliver.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */; };
 		FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67B5FD1CACBB780069C5C5 /* CommonTool.m */; };
 		FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */; };
 		FA9645A71CAE752C00A5B38B /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A61CAE752C00A5B38B /* PhoneViewController.m */; };
@@ -52,8 +52,6 @@
 		FA3603841C8FCD4F001D124F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA3603861C8FCD4F001D124F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA3603B41C8FEB6F001D124F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		FA3603B61C8FEB99001D124F /* UIViewController+Deliver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Deliver.h"; sourceTree = "<group>"; };
-		FA3603B71C8FEB99001D124F /* UIViewController+Deliver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Deliver.m"; sourceTree = "<group>"; };
 		FA3603BA1C8FEC25001D124F /* TestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestController.h; sourceTree = "<group>"; };
 		FA3603BB1C8FEC25001D124F /* TestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestController.m; sourceTree = "<group>"; };
 		FA3603BD1C8FF0E1001D124F /* UIButton+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Copy.h"; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		FA40D5171C91190B00500523 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		FA4966BD1CA7664C00F027C1 /* KeyWordsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyWordsView.h; sourceTree = "<group>"; };
 		FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyWordsView.m; sourceTree = "<group>"; };
+		FA5E2E491CFA8EC400EE6865 /* UIViewController+Deliver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Deliver.h"; sourceTree = "<group>"; };
+		FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Deliver.m"; sourceTree = "<group>"; };
 		FA67B5FC1CACBB780069C5C5 /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
 		FA67B5FD1CACBB780069C5C5 /* CommonTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTool.m; sourceTree = "<group>"; };
 		FA9645A21CAE6D5F00A5B38B /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
@@ -175,12 +175,12 @@
 				FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */,
 				FA40D4F81C91070D00500523 /* UIView+Extension.h */,
 				FA40D4F91C91070D00500523 /* UIView+Extension.m */,
-				FA3603B61C8FEB99001D124F /* UIViewController+Deliver.h */,
-				FA3603B71C8FEB99001D124F /* UIViewController+Deliver.m */,
 				FA40D5131C9118CD00500523 /* UIBarButtonItem+Extension.h */,
 				FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */,
 				FA3603C51C8FF97E001D124F /* UIFont+Name.h */,
 				FA3603C61C8FF97E001D124F /* UIFont+Name.m */,
+				FA5E2E491CFA8EC400EE6865 /* UIViewController+Deliver.h */,
+				FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */,
 				FA3603BD1C8FF0E1001D124F /* UIButton+Copy.h */,
 				FA3603BE1C8FF0E1001D124F /* UIButton+Copy.m */,
 				FA40D4FD1C910AB700500523 /* UIImage+Color.h */,
@@ -312,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA3603B81C8FEB99001D124F /* UIViewController+Deliver.m in Sources */,
 				FA40D5061C910AB700500523 /* UIImage+Extension.m in Sources */,
 				FA40D5071C910AB700500523 /* UIDevice+DeviceType.m in Sources */,
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
@@ -331,6 +330,7 @@
 				FA3603771C8FCD4F001D124F /* main.m in Sources */,
 				FA9645A71CAE752C00A5B38B /* PhoneViewController.m in Sources */,
 				FA40D50F1C91112400500523 /* MapSearchController.m in Sources */,
+				FA5E2E4B1CFA8EC400EE6865 /* UIViewController+Deliver.m in Sources */,
 				FA3603BF1C8FF0E1001D124F /* UIButton+Copy.m in Sources */,
 				FA3603BC1C8FEC25001D124F /* TestController.m in Sources */,
 				FA3603C31C8FF6F6001D124F /* GTMBase64.m in Sources */,
