@@ -22,7 +22,8 @@
     if (!_data) {
         _data = @[@"Normal",
                   @"SystemPhoneBook",
-                  @"MapTest"];
+                  @"MapTest",
+                  @"FontFamilyNames"];
     }
     return _data;
 }
@@ -30,7 +31,8 @@
     if (!_vcClasses) {
         _vcClasses = @[@"ViewController",
                        @"PhoneViewController",
-                       @"MapController"];
+                       @"MapController",
+                       @"FontTableController"];
     }
     return _vcClasses;
 }
@@ -54,6 +56,7 @@
     subViewController.title   = self.data[indexPath.row];
     
     [self.navigationController pushViewController:(UIViewController*)subViewController animated:YES];
+    
 }
 
 @end
