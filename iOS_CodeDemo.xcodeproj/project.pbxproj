@@ -19,6 +19,9 @@
 		FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603C61C8FF97E001D124F /* UIFont+Name.m */; };
 		FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603CB1C8FFC4E001D124F /* PathView.m */; };
 		FA3603CF1C8FFE09001D124F /* iOS_FontName.gif in Resources */ = {isa = PBXBuildFile; fileRef = FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */; };
+		FA3E7DF71D2A680300E1AA61 /* Bezier&CGRefController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7DF61D2A680300E1AA61 /* Bezier&CGRefController.m */; };
+		FA3E7DFB1D2A686400E1AA61 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7DF91D2A686400E1AA61 /* CustomView.m */; };
+		FA3E7DFC1D2A686400E1AA61 /* cc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA3E7DFA1D2A686400E1AA61 /* cc.jpg */; };
 		FA3F3E051D2276BE00BC33CF /* FontTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F3E041D2276BE00BC33CF /* FontTableController.swift */; };
 		FA3F3E0A1D2278C400BC33CF /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F3E091D2278C400BC33CF /* FontTableViewController.m */; };
 		FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4F51C91070D00500523 /* NSArray+Log.m */; };
@@ -66,6 +69,11 @@
 		FA3603CA1C8FFC4E001D124F /* PathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathView.h; sourceTree = "<group>"; };
 		FA3603CB1C8FFC4E001D124F /* PathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathView.m; sourceTree = "<group>"; };
 		FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = iOS_FontName.gif; sourceTree = "<group>"; };
+		FA3E7DF51D2A680300E1AA61 /* Bezier&CGRefController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bezier&CGRefController.h"; sourceTree = "<group>"; };
+		FA3E7DF61D2A680300E1AA61 /* Bezier&CGRefController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Bezier&CGRefController.m"; sourceTree = "<group>"; };
+		FA3E7DF81D2A686400E1AA61 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		FA3E7DF91D2A686400E1AA61 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		FA3E7DFA1D2A686400E1AA61 /* cc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cc.jpg; sourceTree = "<group>"; };
 		FA3F3E031D2276BE00BC33CF /* iOS_CodeDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS_CodeDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA3F3E041D2276BE00BC33CF /* FontTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTableController.swift; sourceTree = "<group>"; };
 		FA3F3E081D2278C400BC33CF /* FontTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewController.h; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 				FA36037C1C8FCD4F001D124F /* ViewController.m */,
 				FA3603BA1C8FEC25001D124F /* TestController.h */,
 				FA3603BB1C8FEC25001D124F /* TestController.m */,
+				FA3E7DF41D2A67B700E1AA61 /* Bezier&CGContextRefVC */,
 				FA3F3E071D2276DC00BC33CF /* PhoneVC */,
 				FA3F3E061D2276D100BC33CF /* FontVC */,
 				FA40D50C1C9110F900500523 /* MapVC */,
@@ -234,6 +243,18 @@
 				FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		FA3E7DF41D2A67B700E1AA61 /* Bezier&CGContextRefVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7DF51D2A680300E1AA61 /* Bezier&CGRefController.h */,
+				FA3E7DF61D2A680300E1AA61 /* Bezier&CGRefController.m */,
+				FA3E7DF81D2A686400E1AA61 /* CustomView.h */,
+				FA3E7DF91D2A686400E1AA61 /* CustomView.m */,
+				FA3E7DFA1D2A686400E1AA61 /* cc.jpg */,
+			);
+			name = "Bezier&CGContextRefVC";
 			sourceTree = "<group>";
 		};
 		FA3F3E061D2276D100BC33CF /* FontVC */ = {
@@ -325,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3E7DFC1D2A686400E1AA61 /* cc.jpg in Resources */,
 				FA3603851C8FCD4F001D124F /* LaunchScreen.storyboard in Resources */,
 				FA3603CF1C8FFE09001D124F /* iOS_FontName.gif in Resources */,
 				FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */,
@@ -344,6 +366,7 @@
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
 				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
+				FA3E7DFB1D2A686400E1AA61 /* CustomView.m in Sources */,
 				FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */,
 				FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */,
 				FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */,
@@ -366,6 +389,7 @@
 				FA40D5051C910AB700500523 /* UIImage+Color.m in Sources */,
 				FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */,
 				FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */,
+				FA3E7DF71D2A680300E1AA61 /* Bezier&CGRefController.m in Sources */,
 				FA40D5081C910AB700500523 /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

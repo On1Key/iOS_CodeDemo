@@ -56,7 +56,7 @@
     }
     
     NSString *fontName = self.dataSource[indexPath.row];
-    cell.textLabel.text = fontName;
+    cell.textLabel.text = [fontName stringByAppendingString:@"(中文)"];
     cell.textLabel.font = [UIFont fontWithName:fontName size:14];
     cell.detailTextLabel.text = fontName;
     cell.detailTextLabel.font = [UIFont systemFontOfSize:12];

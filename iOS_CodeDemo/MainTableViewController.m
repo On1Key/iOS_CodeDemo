@@ -23,7 +23,8 @@
         _data = @[@"Normal",
                   @"SystemPhoneBook",
                   @"MapTest",
-                  @"FontFamilyNames"];
+                  @"FontFamilyNames",
+                  @"Bezier&CGRef"];
     }
     return _data;
 }
@@ -32,7 +33,8 @@
         _vcClasses = @[@"ViewController",
                        @"PhoneViewController",
                        @"MapController",
-                       @"FontTableController"];
+                       @"FontTableViewController",
+                       @"Bezier_CGRefController"];
     }
     return _vcClasses;
 }

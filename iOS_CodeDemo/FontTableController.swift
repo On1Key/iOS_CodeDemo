@@ -51,7 +51,7 @@ class FontTableController: UITableViewController {
             cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: reu)
         }
         
-        cell?.textLabel?.text = dataResource[indexPath.row]
+        cell?.textLabel?.text = dataResource[indexPath.row] + "(中文)"
         let font = UIFont.init(name: dataResource[indexPath.row], size: 14)
         cell?.textLabel?.font = font
         
