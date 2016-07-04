@@ -24,7 +24,8 @@
                   @"SystemPhoneBook",
                   @"MapTest",
                   @"FontFamilyNames",
-                  @"Bezier&CGRef"];
+                  @"Bezier&CGRef",
+                  @"BezierTORefresh"];
     }
     return _data;
 }
@@ -34,7 +35,8 @@
                        @"PhoneViewController",
                        @"MapController",
                        @"FontTableViewController",
-                       @"Bezier_CGRefController"];
+                       @"Bezier_CGRefController",
+                       @"BezierTORefreshController"];
     }
     return _vcClasses;
 }

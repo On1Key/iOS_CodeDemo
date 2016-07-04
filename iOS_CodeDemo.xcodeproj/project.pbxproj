@@ -22,6 +22,8 @@
 		FA3E7DF71D2A680300E1AA61 /* Bezier&CGRefController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7DF61D2A680300E1AA61 /* Bezier&CGRefController.m */; };
 		FA3E7DFB1D2A686400E1AA61 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7DF91D2A686400E1AA61 /* CustomView.m */; };
 		FA3E7DFC1D2A686400E1AA61 /* cc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA3E7DFA1D2A686400E1AA61 /* cc.jpg */; };
+		FA3E7E001D2A69F500E1AA61 /* BezierTORefreshController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7DFF1D2A69F500E1AA61 /* BezierTORefreshController.m */; };
+		FA3E7E031D2A6A0300E1AA61 /* RYCuteView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7E021D2A6A0300E1AA61 /* RYCuteView.m */; };
 		FA3F3E051D2276BE00BC33CF /* FontTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3F3E041D2276BE00BC33CF /* FontTableController.swift */; };
 		FA3F3E0A1D2278C400BC33CF /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3F3E091D2278C400BC33CF /* FontTableViewController.m */; };
 		FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D4F51C91070D00500523 /* NSArray+Log.m */; };
@@ -74,6 +76,10 @@
 		FA3E7DF81D2A686400E1AA61 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		FA3E7DF91D2A686400E1AA61 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		FA3E7DFA1D2A686400E1AA61 /* cc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cc.jpg; sourceTree = "<group>"; };
+		FA3E7DFE1D2A69F500E1AA61 /* BezierTORefreshController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierTORefreshController.h; sourceTree = "<group>"; };
+		FA3E7DFF1D2A69F500E1AA61 /* BezierTORefreshController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierTORefreshController.m; sourceTree = "<group>"; };
+		FA3E7E011D2A6A0300E1AA61 /* RYCuteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RYCuteView.h; sourceTree = "<group>"; };
+		FA3E7E021D2A6A0300E1AA61 /* RYCuteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RYCuteView.m; sourceTree = "<group>"; };
 		FA3F3E031D2276BE00BC33CF /* iOS_CodeDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS_CodeDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA3F3E041D2276BE00BC33CF /* FontTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontTableController.swift; sourceTree = "<group>"; };
 		FA3F3E081D2278C400BC33CF /* FontTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewController.h; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 				FA36037C1C8FCD4F001D124F /* ViewController.m */,
 				FA3603BA1C8FEC25001D124F /* TestController.h */,
 				FA3603BB1C8FEC25001D124F /* TestController.m */,
+				FA3E7DFD1D2A69CF00E1AA61 /* BezierPathToRefreshVC */,
 				FA3E7DF41D2A67B700E1AA61 /* Bezier&CGContextRefVC */,
 				FA3F3E071D2276DC00BC33CF /* PhoneVC */,
 				FA3F3E061D2276D100BC33CF /* FontVC */,
@@ -255,6 +262,17 @@
 				FA3E7DFA1D2A686400E1AA61 /* cc.jpg */,
 			);
 			name = "Bezier&CGContextRefVC";
+			sourceTree = "<group>";
+		};
+		FA3E7DFD1D2A69CF00E1AA61 /* BezierPathToRefreshVC */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7DFE1D2A69F500E1AA61 /* BezierTORefreshController.h */,
+				FA3E7DFF1D2A69F500E1AA61 /* BezierTORefreshController.m */,
+				FA3E7E011D2A6A0300E1AA61 /* RYCuteView.h */,
+				FA3E7E021D2A6A0300E1AA61 /* RYCuteView.m */,
+			);
+			name = BezierPathToRefreshVC;
 			sourceTree = "<group>";
 		};
 		FA3F3E061D2276D100BC33CF /* FontVC */ = {
@@ -376,6 +394,7 @@
 				FA40D4FB1C91070D00500523 /* NSDictionary+Log.m in Sources */,
 				FA40D4FC1C91070D00500523 /* UIView+Extension.m in Sources */,
 				FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */,
+				FA3E7E001D2A69F500E1AA61 /* BezierTORefreshController.m in Sources */,
 				FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */,
 				FA3603771C8FCD4F001D124F /* main.m in Sources */,
 				FA9645A71CAE752C00A5B38B /* PhoneViewController.m in Sources */,
@@ -390,6 +409,7 @@
 				FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */,
 				FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */,
 				FA3E7DF71D2A680300E1AA61 /* Bezier&CGRefController.m in Sources */,
+				FA3E7E031D2A6A0300E1AA61 /* RYCuteView.m in Sources */,
 				FA40D5081C910AB700500523 /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
