@@ -71,6 +71,17 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self pushToMapVC];
     
 }
+#pragma mark - WQLog == GET_NAME == CONTACT
+- (void)logNameContactTest{
+    NSString *helloworld = @"Hello, world!";
+    NSString *jikkk = @"12121";
+    TestController *spider;
+    id vvv = [MapController new];
+    WQLog(@"%@ \
+          \n-----#start-----\
+          \n%s\n%@\n%@\n%@\
+          \n-----#e n d-----",CONCAT(hell, oworld),GET_NAME(spider),jikkk.class,spider.superclass,[vvv class]);
+}
 #pragma mark - 自定义关键词排列view，字符串长度的view
 /**
  *  ----------------------------------------------------------------------

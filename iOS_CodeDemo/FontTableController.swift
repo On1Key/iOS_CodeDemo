@@ -8,7 +8,9 @@
 
 import UIKit
 
-class FontTableController: UITableViewController {
+
+// MARK:@objc(FontTableController)是为了在调用NSClassFromString()的时候可以拿到类名
+@objc(FontTableController) class FontTableController: UITableViewController {
 
     var dataResource : [String]!{
         get{
@@ -18,12 +20,6 @@ class FontTableController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,59 +44,19 @@ class FontTableController: UITableViewController {
         let reu = "res"
         var cell = tableView.dequeueReusableCellWithIdentifier(reu)
         if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: reu)
+            cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reu)
+            cell?.selectionStyle = UITableViewCellSelectionStyle.None
         }
         
-        cell?.textLabel?.text = dataResource[indexPath.row] + "(中文)"
-        let font = UIFont.init(name: dataResource[indexPath.row], size: 14)
+        let fontName = dataResource[indexPath.row]
+        cell?.textLabel?.text = fontName + "(中文)"
+        let font = UIFont.init(name: fontName, size: 14)
         cell?.textLabel?.font = font
+        cell?.detailTextLabel?.text = fontName
+        cell?.detailTextLabel?.font = UIFont.systemFontOfSize(12)
         
         return cell!
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Bezier_CGRefController : UIViewController
+@interface Bezier_CGRefController : BaseViewController
 
 @end

@@ -1,13 +1,13 @@
 //
-//  PhoneViewController.h
+//  BaseViewController.h
 //  iOS_CodeDemo
 //
-//  Created by mac book on 16/4/1.
+//  Created by mac book on 16/7/13.
 //  Copyright © 2016年 mac book. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface PhoneViewController : BaseViewController
+@interface BaseViewController : UIViewController
 
 @end

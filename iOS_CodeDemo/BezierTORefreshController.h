@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BezierTORefreshController : UIViewController
+@interface BezierTORefreshController : BaseViewController
 
 @end

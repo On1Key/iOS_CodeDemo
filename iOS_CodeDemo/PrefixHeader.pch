@@ -44,7 +44,7 @@
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "UITableView+Keyboard.h"
-
+#import "iOS_CodeDemo-swift.h"
 
 
 //自定义view或者工具类
@@ -53,13 +53,23 @@
 #import "CustomNavigationBar.h"
 #import "CustomNaviViewController.h"
 #import "KeyWordsView.h"
+#import "BaseViewController.h"
+#import "DismissingAnimator.h"
+#import "PresentingAnimator.h"
 
 
 
 
-/*----------------block--------------------------*/
+#pragma - mark ----------------tip--------------------------
 //定义一个MACRO，用于blcok内部的弱引用
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+//获取属性命名字符串
+#define GET_NAME(X) #X
+//获取属性分开命名
+#define CONCAT(X, Y) X ## Y
+//输出行号、方法
+#define WQLog(xx, ...)  NSLog(@"%s(%d): " xx, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 /*----------------颜色--------------------------*/
 
 //rgb颜色
@@ -68,7 +78,7 @@
 #define COLOR_RANDOM COLOR_RGB(arc4random()%255,arc4random()%255,arc4random()%255,1.0f)
 
 
-/*---------------字体---------------------------*/
+#pragma - mark---------------字体---------------------------
 //字体
 #define FONT_NORMAL FONT_SW(14,-0.2)
 
@@ -79,7 +89,7 @@
 #define FONT_SW(fon,wei) [UIFont systemFontOfSize:(SCREEN_WIDTH * 0.003125 * fon) weight:(SCREEN_WIDTH * 0.003125 * wei)]
 #define UnitWidth SCREEN_WIDTH * 0.003125
 
-/*---------------------尺寸----------------------------------------------*/
+#pragma - mark ---------------------尺寸----------------------------------------
 
 //边距
 #define MARGIN(number) (SCREEN_WIDTH * 0.003125 * number)
@@ -88,7 +98,7 @@
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
-/*---------------------系统设备相关-----------------------*/
+#pragma - mark---------------------系统设备相关-----------------------
 //获取系统版本
 #define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 #define CurrentSystemVersion [[UIDevice currentDevice] systemVersion]

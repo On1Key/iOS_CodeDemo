@@ -14,6 +14,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapSearchController : UIViewController
+@interface MapSearchController : BaseViewController
 
 @end
