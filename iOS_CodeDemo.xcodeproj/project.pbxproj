@@ -38,6 +38,8 @@
 		FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */; };
 		FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FA40D5171C91190B00500523 /* CustomNavigationBar.m */; };
 		FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */; };
+		FA5951351D549999007F026F /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5951341D549999007F026F /* BezierView.m */; };
+		FA5951381D5499BF007F026F /* CoreAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5951371D5499BF007F026F /* CoreAnimationController.m */; };
 		FA5E2E4B1CFA8EC400EE6865 /* UIViewController+Deliver.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */; };
 		FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FA67B5FD1CACBB780069C5C5 /* CommonTool.m */; };
 		FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */; };
@@ -46,6 +48,7 @@
 		FAA402481D53093F00263095 /* WQMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402471D53093F00263095 /* WQMenu.m */; };
 		FAA402831D5328B200263095 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402801D5328B200263095 /* DismissingAnimator.m */; };
 		FAA402841D5328B200263095 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402821D5328B200263095 /* PresentingAnimator.m */; };
+		FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */; };
 		FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4C4551CB38C400057CF1E /* Media.xcassets */; };
 		FAE7EE441D3607290031E184 /* StreamMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7EE421D3607290031E184 /* StreamMediaController.m */; };
 		FAE7EE561D3608740031E184 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAE7EE471D3608730031E184 /* 1.mp4 */; };
@@ -129,6 +132,10 @@
 		FA40D5171C91190B00500523 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationBar.m; sourceTree = "<group>"; };
 		FA4966BD1CA7664C00F027C1 /* KeyWordsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyWordsView.h; sourceTree = "<group>"; };
 		FA4966BE1CA7664C00F027C1 /* KeyWordsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyWordsView.m; sourceTree = "<group>"; };
+		FA5951331D549999007F026F /* BezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
+		FA5951341D549999007F026F /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
+		FA5951361D5499BF007F026F /* CoreAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationController.h; sourceTree = "<group>"; };
+		FA5951371D5499BF007F026F /* CoreAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationController.m; sourceTree = "<group>"; };
 		FA5E2E491CFA8EC400EE6865 /* UIViewController+Deliver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Deliver.h"; sourceTree = "<group>"; };
 		FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Deliver.m"; sourceTree = "<group>"; };
 		FA67B5FC1CACBB780069C5C5 /* CommonTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTool.h; sourceTree = "<group>"; };
@@ -145,6 +152,8 @@
 		FAA402801D5328B200263095 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		FAA402811D5328B200263095 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
 		FAA402821D5328B200263095 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
+		FAA4028A1D53364800263095 /* UIView+touchExtendInset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+touchExtendInset.h"; sourceTree = "<group>"; };
+		FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+touchExtendInset.m"; sourceTree = "<group>"; };
 		FAA4C4551CB38C400057CF1E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FAE7EE411D3607290031E184 /* StreamMediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamMediaController.h; sourceTree = "<group>"; };
 		FAE7EE421D3607290031E184 /* StreamMediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamMediaController.m; sourceTree = "<group>"; };
@@ -209,6 +218,7 @@
 				FA36037C1C8FCD4F001D124F /* ViewController.m */,
 				FA3603BA1C8FEC25001D124F /* TestController.h */,
 				FA3603BB1C8FEC25001D124F /* TestController.m */,
+				FA5951321D549985007F026F /* CoreAnimation */,
 				FAA402421D5308D100263095 /* WQItem */,
 				FAE7EE401D3606B00031E184 /* StreamMedia */,
 				FA3E7DFD1D2A69CF00E1AA61 /* BezierPathToRefreshVC */,
@@ -248,6 +258,8 @@
 				FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */,
 				FA40D4F81C91070D00500523 /* UIView+Extension.h */,
 				FA40D4F91C91070D00500523 /* UIView+Extension.m */,
+				FAA4028A1D53364800263095 /* UIView+touchExtendInset.h */,
+				FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */,
 				FA40D5131C9118CD00500523 /* UIBarButtonItem+Extension.h */,
 				FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */,
 				FA3603C51C8FF97E001D124F /* UIFont+Name.h */,
@@ -354,6 +366,17 @@
 				FA40D50E1C91112400500523 /* MapSearchController.m */,
 			);
 			name = MapVC;
+			sourceTree = "<group>";
+		};
+		FA5951321D549985007F026F /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				FA5951361D5499BF007F026F /* CoreAnimationController.h */,
+				FA5951371D5499BF007F026F /* CoreAnimationController.m */,
+				FA5951331D549999007F026F /* BezierView.h */,
+				FA5951341D549999007F026F /* BezierView.m */,
+			);
+			name = CoreAnimation;
 			sourceTree = "<group>";
 		};
 		FAA402421D5308D100263095 /* WQItem */ = {
@@ -504,10 +527,12 @@
 				FA40D5071C910AB700500523 /* UIDevice+DeviceType.m in Sources */,
 				FAA402841D5328B200263095 /* PresentingAnimator.m in Sources */,
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
+				FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */,
 				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
 				FAA402481D53093F00263095 /* WQMenu.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
 				FA3E7DFB1D2A686400E1AA61 /* CustomView.m in Sources */,
+				FA5951381D5499BF007F026F /* CoreAnimationController.m in Sources */,
 				FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */,
 				FAE7EE671D36088F0031E184 /* BaseViewController.m in Sources */,
 				FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */,
@@ -517,6 +542,7 @@
 				FA191DF61CA12FA7006DBB7A /* UITableView+Keyboard.m in Sources */,
 				FA40D4FB1C91070D00500523 /* NSDictionary+Log.m in Sources */,
 				FA40D4FC1C91070D00500523 /* UIView+Extension.m in Sources */,
+				FA5951351D549999007F026F /* BezierView.m in Sources */,
 				FA40D4FA1C91070D00500523 /* NSArray+Log.m in Sources */,
 				FA3E7E001D2A69F500E1AA61 /* BezierTORefreshController.m in Sources */,
 				FA40D5181C91190B00500523 /* CustomNavigationBar.m in Sources */,

@@ -192,6 +192,39 @@ typedef NS_ENUM(NSInteger, TEST){
 - (void)testOfBase64_md5{
     NSLog(@"\ndecodeLocation:%@\nmd5_base64:%@\n%@\n%@\n%@\nencodebase64:%@\ndecode:%@\n",[GTMBase64 decodeBase64String:@"MTE2LjQyNzA1NzgzNDI="],[GTMBase64 md5_base64:@"HelloWorld"],[GTMBase64 md5_base64:@"Helloworld"],[GTMBase64 md5_base64:@"helloWorld"],[GTMBase64 md5_base64:@"helloworld"],[GTMBase64 encodeBase64String:@"HelloWorld"],[GTMBase64 decodeBase64String:[GTMBase64 encodeBase64String:@"HelloWorld"]]);
 }
+#pragma mark - 递归获取本地图片并保存到指定文件夹
+//递归获取本地图片并保存到指定文件夹
+- (void) findPictureAtPath:(NSString *)directoryPath
+{
+    // 保存递归到图片的文件夹路径  也可用代码创建文件夹 此处不在赘述
+    NSString * saveDirectoryPath =@"/Users/macbook/Desktop/imageNames";
+    // 获取文件管理器
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    // 获取路径下的所有文件和文件夹以字符串的形式保存在数组中
+    NSArray * fileNames = [fileManager contentsOfDirectoryAtPath:directoryPath error:nil];
+    // 遍历数组获取下级目录名
+    for (NSString * fileName in fileNames) {
+        // 拼接路径包括文件和文件夹的路径
+        NSString * filePath = [directoryPath stringByAppendingPathComponent:fileName];
+        // 判断 文件的后缀名是否是图片的格式  判断前缀名的方法是 hasPrefix:@" "
+        if ([fileName hasSuffix:@"png"] ||
+            [fileName hasSuffix:@"jpg"] ||
+            [fileName hasSuffix:@"gif"]) {
+            // 判断输入的字符是否有于文件相匹配的 模糊查询，去掉判断则直接把获取的图片复制到指定文件夹中
+            //            if ([fileName rangeOfString:self.inputText.text].length >0) {
+            // 为图片保存路径拼接文件名 下面的方法参数toPath:要求路径必须含有文件名
+            NSString * newPath = [saveDirectoryPath stringByAppendingPathComponent:fileName];
+            // 复制到指定路径
+            [fileManager copyItemAtPath:filePath toPath:newPath error:nil];
+            //            }
+        }
+        // 若是文件夹 则递归遍历
+        BOOL isDirectory;
+        if ([fileManager fileExistsAtPath:filePath isDirectory:&isDirectory] && isDirectory) {
+            [self findPictureAtPath:filePath];
+        }
+    }
+}
 #pragma mark - 手写板测试
 /**
  *  ----------------------------------------------------------------------

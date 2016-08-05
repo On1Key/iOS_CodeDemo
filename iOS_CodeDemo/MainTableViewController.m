@@ -36,6 +36,7 @@
                   @"Bezier&CGRef",
                   @"BezierTORefresh",
                   @"WQItem",
+                  @"CoreAnim",
                   
                   //storyBoard名称
                   @"StreamMedia"];
@@ -50,7 +51,8 @@
                      @"FontTableController",
                      @"Bezier_CGRefController",
                      @"BezierTORefreshController",
-                     @"WQItemController"];
+                     @"WQItemController",
+                     @"CoreAnimationController"];
     }
     return _codeVCS;
 }
