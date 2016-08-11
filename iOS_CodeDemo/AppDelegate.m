@@ -18,10 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    
+    //webCache
+    [NSURLProtocol registerClass:[RNCachingURLProtocol class]];//way1
+//    [NSURLProtocol registerClass:[CacheURLProtocol class]];//way2
+    
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MainTableViewController *vc = [MainTableViewController new];
     //此处可以适用一个CustomNaviViewController
     _window.rootViewController = [[CustomNaviViewController alloc] initWithRootViewController:vc];
+//    _window.rootViewController = [NSClassFromString(@"CoreAnimationController") new];
     [vc setUpTitle:@"Main"];
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];

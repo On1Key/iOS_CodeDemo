@@ -37,6 +37,7 @@
                   @"BezierTORefresh",
                   @"WQItem",
                   @"CoreAnim",
+                  @"WebCache",
                   
                   //storyBoard名称
                   @"StreamMedia"];
@@ -52,7 +53,8 @@
                      @"Bezier_CGRefController",
                      @"BezierTORefreshController",
                      @"WQItemController",
-                     @"CoreAnimationController"];
+                     @"CoreAnimationController",
+                     @"WebCacheController"];
     }
     return _codeVCS;
 }

@@ -27,5 +27,8 @@
  * 将数值转换为两位小数字符串
  */
 + (NSString *)stringWithFloatNumber:(NSString *)number;
-
+/**
+ *  将十六进制字符串转为十进制字符串
+ */
++ (NSString *)stringFromHexString:(NSString *)hexString;
 @end

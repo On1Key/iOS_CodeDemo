@@ -12,5 +12,4 @@
 - (void)animateBaseToTransform;
 - (void)animateKeyFrameToMove;
 - (void)animateGroupActions;
-- (void)animateTransition;
 @end

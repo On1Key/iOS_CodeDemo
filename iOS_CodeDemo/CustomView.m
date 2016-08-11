@@ -221,9 +221,9 @@
     
     /*图片*/
     UIImage *image = [UIImage imageNamed:@"cc.jpg"];
-    [image drawInRect:CGRectMake(60, 340, 20, 20)];//在坐标中画出图片
+    [image drawInRect:CGRectMake(60, 340, 50, 50)];//在坐标中画出图片
     //    [image drawAtPoint:CGPointMake(100, 340)];//保持图片大小在point点开始画图片，可以把注释去掉看看
-    CGContextDrawImage(context, CGRectMake(100, 340, 20, 20), image.CGImage);//使用这个使图片上下颠倒了，参考http://blog.csdn.net/koupoo/article/details/8670024
+    CGContextDrawImage(context, CGRectMake(170, 340, 100, 100), image.CGImage);//使用这个使图片上下颠倒了，参考http://blog.csdn.net/koupoo/article/details/8670024
     
     //    CGContextDrawTiledImage(context, CGRectMake(0, 0, 20, 20), image.CGImage);//平铺图
     

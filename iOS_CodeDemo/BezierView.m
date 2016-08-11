@@ -5,9 +5,12 @@
 //  Created by mac book on 16/8/4.
 //  Copyright © 2016年 mac book. All rights reserved.
 //
+//参考链接：
+//http://www.jianshu.com/p/ee2d3a8b2d67
 
 #import "BezierView.h"
 
+/**动画状态*/
 typedef NS_ENUM(NSInteger,AnimateState){
     AnimateStateStart,
     AnimateStateMoving,
@@ -38,7 +41,11 @@ typedef NS_ENUM(NSInteger,AnimateState){
 #pragma mark - CALayer：图层
 #pragma mark - BezierPath
 @end
-#pragma mark - ------------------------------------
+#pragma mark -
+#pragma mark ------------------------------------
+#pragma mark    <><><><><><><><><><><><>
+#pragma mark ------------------------------------
+#pragma mark -
 @implementation BezierView
 #pragma mark -公用
 - (instancetype)initWithFrame:(CGRect)frame
@@ -50,6 +57,7 @@ typedef NS_ENUM(NSInteger,AnimateState){
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panActionWithTransitionAnomate:)];
         [self addGestureRecognizer:pan];
+        
     }
     return self;
 }
@@ -118,7 +126,6 @@ double radians(float degrees){
         //真正改变最终动画结果需要在动画结束后的代理中设置
         animation.fillMode=kCAFillModeForwards;
         animation.removedOnCompletion = NO;
-        
         _transformAnimate = animation;
     }
     return _transformAnimate;
@@ -296,9 +303,9 @@ double radians(float degrees){
         self.backgroundColor = colors[direction];
 //        //3.设置转场后的新视图添加转场动画
         //方法一：自定义转场
-        [self.layer addAnimation:self.transitionAnimate forKey:nil];
-        //方法一：uiview的转场
-//        [self transitionAnimation:bl index:direction];
+//        [self.layer addAnimation:self.transitionAnimate forKey:nil];
+        //方法二：uiview的转场
+        [self transitionAnimation:bl index:direction];
         
     }
 }
@@ -314,9 +321,9 @@ double radians(float degrees){
     }else if (direction == 2) {
         option=UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionFlipFromLeft;
     }else if (direction == 0) {
-        option=UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionFlipFromTop;
+        option=UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionCurlUp;
     }else{
-        option=UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionFlipFromBottom;
+        option=UIViewAnimationOptionCurveLinear|UIViewAnimationOptionTransitionCurlDown;
     }
     
     NSArray *colors = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor]];
@@ -327,17 +334,65 @@ double radians(float degrees){
 - (void)animateTransition{
     [self actionChangeStateToPauseOrResume];
 }
-#pragma mark - CAReplicatorLayer:复制图层
-#pragma mark - CAShapeLayer：形状图层
-#pragma mark - CAGradientLayer：渐变图层
-#pragma mark - CAReplicatorLayer:复制图层
-#pragma mark - CALayer：图层
-#pragma mark - BezierPath
+#pragma mark - drawRect
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
-//    [self drawARCPath];
-//    [self bezerPathTest];
+    //    [self drawARCPath];
+    //    [self bezerPathTest];
+    
+    [self textDirectionToRoorLayer];
 }
+#pragma mark - CAReplicatorLayer:复制图层
+//属性说明：
+//instanceCount ：复制份数。（会把原始的子图层复制多少份，包括原来的一份）
+//instanceTransform：形变。每一份相对上一份的形变量
+//instanceDelay ：每一份相对上一份的时间延迟。
+//修改CAReplicatorLayer的颜色通道，可以改变CAReplicatorLayer的显示的样式
+//@property float instanceRedOffset;
+//@property float instanceGreenOffset;
+//@property float instanceBlueOffset;
+//@property float instanceAlphaOffset;
+
+#pragma mark - CAShapeLayer：形状图层
+//属性说明：
+//path：描述形状的路径。默认会把路径封闭，然后填充。
+//fillColor :填充的颜色
+//strokeColor：描边的颜色（如果想仅仅只描边的话，就把fillColor设为clearcolor就好）
+//strokeStart：开始描边的比例【0-1】
+//strokeEnd：结束描边的比例【0-1】
+
+#pragma mark - CAGradientLayer：渐变图层
+//属性说明：
+//colors ：保存所有渐变的颜色，里面是CGColorRef，记得用id，让编译器以为数组里面的是OC对象。
+//locations ：保存所有渐变的位置【0-1】
+//startPoint：开始渐变的点【0-1】
+//endPoint：结束渐变的点【0-1】
+
+#pragma mark - CALayer：图层
+#pragma mark - CATextLayer
+- (void)textDirectionToRoorLayer{
+    
+    NSArray *texts = @[@"Right",@"Up",@"Down",@"Left"];
+    for (int i = 0; i < texts.count; i ++) {
+        CATextLayer *textLayer = [[CATextLayer alloc] init];
+        textLayer.fontSize = 12;
+        textLayer.font = (__bridge CFTypeRef)(@"Zapfino");
+        textLayer.string = texts[i];
+        textLayer.foregroundColor = [UIColor brownColor].CGColor;
+        //字体变清晰
+        textLayer.contentsScale = [[UIScreen mainScreen] scale];
+        //frame
+        CGFloat tetW = self.width * 0.5;
+        CGFloat tetX = (i % 2) * tetW;
+        CGFloat tetH = 44;
+        CGFloat tetY = (i / 2) * (self.height - tetH);
+        textLayer.frame = CGRectMake(tetX,tetY,tetW,tetH);
+        textLayer.alignmentMode = (i % 2) == 0 ? kCAAlignmentLeft : kCAAlignmentRight;
+        [self.layer addSublayer:textLayer];
+    }
+    
+}
+#pragma mark - BezierPath
 - (void)bezerPathTest{
     CGPoint startP = CGPointMake(100, 100);
     CGPoint throuthP = CGPointMake(120, 150);
@@ -371,7 +426,6 @@ double radians(float degrees){
     //    shapeLayer.path = path.CGPath;
     //    shapeLayer.fillColor = [UIColor lightGrayColor].CGColor;
     //    [self.view.layer addSublayer:shapeLayer];
-    
     
 }
 const CGFloat pi = 3.14159265359;
