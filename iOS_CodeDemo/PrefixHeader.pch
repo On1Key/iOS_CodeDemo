@@ -34,6 +34,7 @@
 //类扩展
 #import "UIViewController+Deliver.h"
 #import "UIButton+Copy.h"
+#import "UIButton+touch.h"//防止多次点击
 #import "UIFont+Name.h"
 #import "NSArray+Log.h"
 #import "NSDictionary+Log.h"

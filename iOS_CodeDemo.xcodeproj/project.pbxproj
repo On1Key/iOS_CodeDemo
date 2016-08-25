@@ -57,6 +57,7 @@
 		FAA863D21D5C4DC6001187BC /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FAA863CC1D5C4DC6001187BC /* README.md */; };
 		FAA863D31D5C4DC6001187BC /* RNCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863CE1D5C4DC6001187BC /* RNCachingURLProtocol.m */; };
 		FAA863D41D5C4DC6001187BC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863D01D5C4DC6001187BC /* Reachability.m */; };
+		FABB2D631D6EC05B0078FF57 /* UIButton+touch.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB2D621D6EC05B0078FF57 /* UIButton+touch.m */; };
 		FAE7EE441D3607290031E184 /* StreamMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7EE421D3607290031E184 /* StreamMediaController.m */; };
 		FAE7EE561D3608740031E184 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAE7EE471D3608730031E184 /* 1.mp4 */; };
 		FAE7EE571D3608740031E184 /* 4_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE7EE481D3608730031E184 /* 4_circle.png */; };
@@ -175,6 +176,8 @@
 		FAA863CE1D5C4DC6001187BC /* RNCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCachingURLProtocol.m; sourceTree = "<group>"; };
 		FAA863CF1D5C4DC6001187BC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		FAA863D01D5C4DC6001187BC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		FABB2D611D6EC05B0078FF57 /* UIButton+touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+touch.h"; sourceTree = "<group>"; };
+		FABB2D621D6EC05B0078FF57 /* UIButton+touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+touch.m"; sourceTree = "<group>"; };
 		FAE7EE411D3607290031E184 /* StreamMediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamMediaController.h; sourceTree = "<group>"; };
 		FAE7EE421D3607290031E184 /* StreamMediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamMediaController.m; sourceTree = "<group>"; };
 		FAE7EE471D3608730031E184 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				FA3603C61C8FF97E001D124F /* UIFont+Name.m */,
 				FA5E2E491CFA8EC400EE6865 /* UIViewController+Deliver.h */,
 				FA5E2E4A1CFA8EC400EE6865 /* UIViewController+Deliver.m */,
+				FABB2D611D6EC05B0078FF57 /* UIButton+touch.h */,
+				FABB2D621D6EC05B0078FF57 /* UIButton+touch.m */,
 				FA3603BD1C8FF0E1001D124F /* UIButton+Copy.h */,
 				FA3603BE1C8FF0E1001D124F /* UIButton+Copy.m */,
 				FA40D4FD1C910AB700500523 /* UIImage+Color.h */,
@@ -623,6 +628,7 @@
 				FA40D50F1C91112400500523 /* MapSearchController.m in Sources */,
 				FAA402451D5308EC00263095 /* WQItemController.m in Sources */,
 				FA5E2E4B1CFA8EC400EE6865 /* UIViewController+Deliver.m in Sources */,
+				FABB2D631D6EC05B0078FF57 /* UIButton+touch.m in Sources */,
 				FA3603BF1C8FF0E1001D124F /* UIButton+Copy.m in Sources */,
 				FA3603BC1C8FEC25001D124F /* TestController.m in Sources */,
 				FA3603C31C8FF6F6001D124F /* GTMBase64.m in Sources */,
