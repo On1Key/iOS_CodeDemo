@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "MainTableViewController.h"
 
+// 3D Touch标签
+#define AppItem_BezerPath  @"BezerPath"
+
 @interface AppDelegate ()
 
 @end
@@ -32,8 +35,30 @@
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
     
+    [self shortcutButton];
+    
     
     return YES;
+}
+/**
+ * 创建快捷app图标
+ */
+- (void)shortcutButton{
+    if(IOS_VERSION<9.0)return;
+    
+    //创建app快捷图标
+    UIApplicationShortcutItem * itemPath = [[UIApplicationShortcutItem alloc]initWithType:AppItem_BezerPath localizedTitle:AppItem_BezerPath localizedSubtitle:@"💕" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeFavorite] userInfo:nil];
+    // 添加
+    [UIApplication sharedApplication].shortcutItems = @[itemPath];
+    
+}
+/**通过3D Touch进入*/
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler{
+    
+    if([shortcutItem.type isEqualToString:AppItem_BezerPath] && shortcutItem){
+        CustomNaviViewController *naviVC = (CustomNaviViewController*)[UIApplication sharedApplication].delegate.window.rootViewController;
+        [naviVC pushViewController:[NSClassFromString(@"Bezier_CGRefController") new] animated:YES];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

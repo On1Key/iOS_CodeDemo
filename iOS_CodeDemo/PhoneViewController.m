@@ -135,7 +135,8 @@
 //取电话数据
 -(void)handleRowSelection:(int)rowIndex byArray:(NSArray *)myContacts
 {
-    ABRecordRef person = objc_unretainedPointer([myContacts objectAtIndex:rowIndex]);
+//    __bridge CAST_USER_ADDR_T([myContacts objectAtIndex:rowIndex]);
+    ABRecordRef person = (__bridge void*)([myContacts objectAtIndex:rowIndex]);
     ABMultiValueRef phoneNumbers = ABRecordCopyValue(person,
                                                      kABPersonPhoneProperty);
     

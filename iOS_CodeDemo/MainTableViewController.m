@@ -9,7 +9,7 @@
 #import "MainTableViewController.h"
 #import "RYCuteView.h"
 
-@interface MainTableViewController ()<UIViewControllerTransitioningDelegate>
+@interface MainTableViewController ()<UIViewControllerTransitioningDelegate,UIViewControllerPreviewingDelegate>
 /**所有标题数组*/
 @property (nonatomic, strong) NSArray *data;
 /**所有vc name数组*/
@@ -35,7 +35,7 @@
                   @"FontFamilyNames",
                   @"Bezier&CGRef",
                   @"BezierTORefresh",
-                  @"WQItem",
+                  @"WQItem(3D Touch)",
                   @"CoreAnim",
                   @"WebCache",
                   
@@ -80,6 +80,13 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifer];
     }
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        NSLog(@"3D Touch  可用!");
+        //给cell注册3DTouch的peek（预览）和pop功能
+        [self registerForPreviewingWithDelegate:self sourceView:cell];
+    } else {
+        NSLog(@"3D Touch 无效");
+    }
     cell.textLabel.text = self.data[indexPath.row];
     return cell;
 }
@@ -113,6 +120,31 @@
     }
     
 
+}
+#pragma mark - UIViewControllerPreviewingDelegate
+//peek(预览)
+- (nullable UIViewController *)previewingContext:(id <UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location
+{
+    //获取按压的cell所在行，[previewingContext sourceView]就是按压的那个视图
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell* )[previewingContext sourceView]];
+    
+    //设定预览的界面
+    NSString *className = self.vcClasses[indexPath.row];
+    UIViewController *peekVC = [NSClassFromString(className) new];
+    peekVC.preferredContentSize = CGSizeMake(0.0f,500.0f);
+//    peekVC.str = [NSString stringWithFormat:@"我是%@,用力按一下进来",className];
+    
+    //调整不被虚化的范围，按压的那个cell不被虚化（轻轻按压时周边会被虚化，再少用力展示预览，再加力跳页至设定界面）
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width,40);
+    previewingContext.sourceRect = rect;
+    
+    //返回预览界面
+    return peekVC;
+}
+
+//pop（按用点力进入）
+- (void)previewingContext:(id <UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

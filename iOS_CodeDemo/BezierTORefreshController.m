@@ -23,4 +23,24 @@
     [self.view addSubview:cuteView];
 }
 
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    // setup a list of preview actions
+    UIPreviewAction *action1 = [UIPreviewAction actionWithTitle:@"Default" style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"Aciton1");
+    }];
+    
+    UIPreviewAction *action2 = [UIPreviewAction actionWithTitle:@"Selected" style:UIPreviewActionStyleSelected handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"Aciton2");
+    }];
+    
+    UIPreviewAction *action3 = [UIPreviewAction actionWithTitle:@"Destructive" style:UIPreviewActionStyleDestructive handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+        NSLog(@"Aciton3");
+    }];
+    
+    NSArray *actions = @[action1,action2,action3];
+    
+    // and return them (return the array of actions instead to see all items ungrouped)
+    return actions;
+}
+
 @end

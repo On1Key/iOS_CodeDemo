@@ -86,5 +86,35 @@
     
     //    _tabBar.selectedItemIndex = index;
 }
+- (NSArray<id<UIPreviewActionItem>> *)previewActionItems {
+    // setup a list of preview actions
+    NSArray *actionTitles = @[DATA[3],DATA[5],DATA[7]];
+    NSMutableArray *actions = [NSMutableArray array];
+    for (int i = 0; i < actionTitles.count; i++) {
+        UIPreviewAction *action = [UIPreviewAction actionWithTitle:actionTitles[i] style:UIPreviewActionStyleDefault handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+            NSLog(@"Jump into---%@",previewViewController);
+            CustomNaviViewController *naviVC = (CustomNaviViewController*)[UIApplication sharedApplication].delegate.window.rootViewController;
+            [naviVC pushViewController:previewViewController animated:YES];
+            [self setViewIndex:[DATA indexOfObject:actionTitles[i]]];
+        }];
+        [actions addObject:action];
+    }
+    
+    NSMutableArray *allActions = [NSMutableArray array];
+    for (int i = 0; i < DATA.count; i ++) {
+        UIPreviewAction *action = [UIPreviewAction actionWithTitle:DATA[i] style:i % 3 handler:^(UIPreviewAction * _Nonnull action, UIViewController * _Nonnull previewViewController) {
+            NSLog(@"Jump into---%@",previewViewController);
+            CustomNaviViewController *naviVC = (CustomNaviViewController*)[UIApplication sharedApplication].delegate.window.rootViewController;
+            [naviVC pushViewController:previewViewController animated:YES];
+            [self setViewIndex:i];
+        }];
+        [allActions addObject:action];
+    }
+    
+    UIPreviewActionGroup *group = [UIPreviewActionGroup actionGroupWithTitle:@"查看全部" style:UIPreviewActionStyleDestructive actions:allActions];
+    // and return them (return the array of actions instead to see all items ungrouped)
+    [actions addObject:group];
+    return actions;
+}
 
 @end
