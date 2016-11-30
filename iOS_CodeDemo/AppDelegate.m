@@ -46,6 +46,31 @@
     
     return YES;
 }
+/**从widget跳转回来进入对应界面*/
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    
+    NSArray *arr = @[@"ViewController",
+      @"PhoneViewController",
+      @"MapController",
+      @"FontTableController",
+      @"Bezier_CGRefController",
+      @"BezierTORefreshController",
+      @"WQItemController",
+      @"CoreAnimationController",
+      @"WebCacheController",
+      @"NotificateController"];
+    
+    NSString* prefix = @"suibianxiE://qu=";
+    
+    if ([[url absoluteString] rangeOfString:prefix].location != NSNotFound) {
+        NSString* action = [[url absoluteString] substringFromIndex:prefix.length];
+        if ([arr containsObject:action]) {
+            [(UINavigationController *)_window.rootViewController pushViewController:[NSClassFromString(action) new] animated:YES];
+        }
+    }
+    
+    return YES;
+}
 /**
  * 创建快捷app图标
  */

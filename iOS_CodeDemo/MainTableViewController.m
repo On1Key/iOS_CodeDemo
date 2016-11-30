@@ -24,6 +24,24 @@
 @implementation MainTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    id obj = @{@"t":@"for life",
+               @"i":@"",
+               @"c":@[@{@"t":self.codeVCS[0],@"i":@"",
+                        @"c":@"132423爱打打分阿斯顿发的说法发送到发送到非23141234阿萨飒飒阿萨德法师打发斯蒂芬阿斯顿发生的发生大飒飒大师阿萨德法师打发"},
+                      @{@"t":self.codeVCS[3],@"i":@"",
+                        @"c":@"阿萨德法师打发斯蒂芬啊啊啊的"},
+                      @{@"t":self.codeVCS[4],@"i":@"",
+                        @"c":@"阿达阿士大夫的阿萨德大法师打发打发大啊阿萨德阿达的发送到发送到"},
+                      @{@"t":self.codeVCS[5],@"i":@"",
+                        @"c":@"啊阿萨德法师打发阿萨德法搜代发阿斯顿发阿斯顿发大水但是发的说法阿斯顿发的沙发斯蒂芬阿斯顿发按说"},
+                      @{@"t":self.codeVCS[6],@"i":@"",
+                        @"c":@"11111111111111111111111111"}]};
+    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.WidgetDemo.iOS_CodeDemo"] setObject:obj forKey:@"WidgetDemo.saveID"];
+    [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.WidgetDemo.iOS_CodeDemo"] synchronize];
+    
+    
+    
 }
 - (NSArray *)data{
     if (!_data) {
