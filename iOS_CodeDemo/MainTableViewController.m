@@ -38,6 +38,7 @@
                   @"WQItem(3D Touch)",
                   @"CoreAnim",
                   @"WebCache",
+                  @"Notificate",
                   
                   //storyBoard名称
                   @"StreamMedia"];
@@ -54,7 +55,8 @@
                      @"BezierTORefreshController",
                      @"WQItemController",
                      @"CoreAnimationController",
-                     @"WebCacheController"];
+                     @"WebCacheController",
+                     @"NotificateController"];
     }
     return _codeVCS;
 }

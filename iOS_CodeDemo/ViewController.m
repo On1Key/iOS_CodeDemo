@@ -18,6 +18,12 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton *btn_test;
+/**动画layer*/
+@property (nonatomic, strong) CALayer *animateLayer;
+/**动画图片*/
+@property (nonatomic, strong) UIImageView *animateImageView;
+/**按压值label*/
+@property (nonatomic, strong) UILabel *forceLabel;
 @end
 
 /**
@@ -62,6 +68,42 @@ typedef NS_ENUM(NSInteger, TEST){
 //    获取随机数字和字母组合
 //    [self generateTradeNO];
     
+    UIImage *image = [UIImage imageNamed:@"6.jpg"];
+    CALayer *layer = [CALayer layer];
+    layer.contents = (id)image.CGImage;
+    layer.bounds = CGRectMake(0, 0, image.size.width, image.size.height);
+    layer.position = CGPointMake(160, 200);
+    [self.view.layer addSublayer:layer];
+    _animateLayer = layer;
+    
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = image;
+    imageView.frame = CGRectMake(100, 400, 100, 100);
+    [self.view addSubview:imageView];
+    _animateImageView = imageView;
+    
+    for (id layer in imageView.layer.sublayers) {
+        NSLog(@"\n------------------%d------------------\n%s==%@",__LINE__,__func__,layer);
+    }
+    
+    UILabel *forceLabel = [[UILabel alloc] init];
+    forceLabel.frame = CGRectMake(100, 100, 100, 50);
+    forceLabel.numberOfLines = 0;
+    forceLabel.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:forceLabel];
+    _forceLabel = forceLabel;
+    
+}
+//按住移动or压力值改变时的回调
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSArray *arrayTouch = [touches allObjects];
+    UITouch *touch = (UITouch *)[arrayTouch lastObject];
+    //通过tag确定按压的是哪个view，注意：如果按压的是label，将label的userInteractionEnabled属性设置为YES
+    NSLog(@"move压力 ＝ %f",touch.force);
+    //红色背景的label显示压力值
+    _forceLabel.text = [NSString stringWithFormat:@"压力：%f",touch.force];
+        //红色背景的label上移的高度＝压力值*100
+//        _bottom.constant = ((UITouch *)[arrayTouch lastObject]).force * 100;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
@@ -69,7 +111,24 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self openAnotherApp];
 //    地图页面
 //    [self pushToMapVC];
+    _animateLayer.transform = CATransform3DMakeScale(1.5, 1.5, 1);  // 将图片大小按照X轴和Y轴缩放90%，永久
+    [UIView animateWithDuration:0.3 animations:^{
+        _animateImageView.transform = CGAffineTransformScale(_animateImageView.transform, 1.5, 1.5);
+    }];
     
+//    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+//    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity]; // 将目标值设为原值
+//    animation.autoreverses = NO; // 自动倒回最初效果
+//    animation.duration = 0.35;
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+//    animation.repeatCount = HUGE_VALF;
+//    [_animateLayer addAnimation:animation forKey:@"pulseAnimation"];
+    
+}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    _animateLayer.transform = CATransform3DMakeScale(1.0/1.5, 1.0/1.5, 1);
+    _animateImageView.transform = CGAffineTransformScale(_animateImageView.transform, 1.0/1.5, 1.0/1.5);
+    _forceLabel.text = @"压力：0";
 }
 #pragma mark - WQLog == GET_NAME == CONTACT
 - (void)logNameContactTest{

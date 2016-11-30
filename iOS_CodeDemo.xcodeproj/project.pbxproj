@@ -49,7 +49,6 @@
 		FAA402831D5328B200263095 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402801D5328B200263095 /* DismissingAnimator.m */; };
 		FAA402841D5328B200263095 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402821D5328B200263095 /* PresentingAnimator.m */; };
 		FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */; };
-		FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4C4551CB38C400057CF1E /* Media.xcassets */; };
 		FAA863C11D5C4CB9001187BC /* WebCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863C01D5C4CB9001187BC /* WebCacheController.m */; };
 		FAA863C81D5C4DB2001187BC /* WebCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863C51D5C4DB2001187BC /* WebCachedData.m */; };
 		FAA863C91D5C4DB2001187BC /* CacheURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863C71D5C4DB2001187BC /* CacheURLProtocol.m */; };
@@ -58,6 +57,14 @@
 		FAA863D31D5C4DC6001187BC /* RNCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863CE1D5C4DC6001187BC /* RNCachingURLProtocol.m */; };
 		FAA863D41D5C4DC6001187BC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA863D01D5C4DC6001187BC /* Reachability.m */; };
 		FABB2D631D6EC05B0078FF57 /* UIButton+touch.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB2D621D6EC05B0078FF57 /* UIButton+touch.m */; };
+		FACCFDA81DDEC50200730F79 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FACCFDA71DDEC50200730F79 /* 6.jpg */; };
+		FADCF3CC1D98BE48005E2FDD /* NotificateController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADCF3CB1D98BE48005E2FDD /* NotificateController.m */; };
+		FADCF3CF1D98C6D7005E2FDD /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FADCF3CE1D98C6D7005E2FDD /* AlertView.m */; };
+		FADCF3D11D98C6E4005E2FDD /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADCF3D01D98C6E4005E2FDD /* AlertView.xib */; };
+		FADCF3DF1D991CF1005E2FDD /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADCF3DE1D991CF1005E2FDD /* Media.xcassets */; };
+		FADCF3E21D991D10005E2FDD /* aa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADCF3E01D991D10005E2FDD /* aa.jpg */; };
+		FADCF3E31D991D10005E2FDD /* bb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FADCF3E11D991D10005E2FDD /* bb.jpg */; };
+		FADCF3E61D99232D005E2FDD /* UIAlertController+Tellphone.m in Sources */ = {isa = PBXBuildFile; fileRef = FADCF3E51D99232D005E2FDD /* UIAlertController+Tellphone.m */; };
 		FAE7EE441D3607290031E184 /* StreamMediaController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7EE421D3607290031E184 /* StreamMediaController.m */; };
 		FAE7EE561D3608740031E184 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FAE7EE471D3608730031E184 /* 1.mp4 */; };
 		FAE7EE571D3608740031E184 /* 4_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE7EE481D3608730031E184 /* 4_circle.png */; };
@@ -162,7 +169,6 @@
 		FAA402821D5328B200263095 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
 		FAA4028A1D53364800263095 /* UIView+touchExtendInset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+touchExtendInset.h"; sourceTree = "<group>"; };
 		FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+touchExtendInset.m"; sourceTree = "<group>"; };
-		FAA4C4551CB38C400057CF1E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FAA863BF1D5C4CB9001187BC /* WebCacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCacheController.h; sourceTree = "<group>"; };
 		FAA863C01D5C4CB9001187BC /* WebCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebCacheController.m; sourceTree = "<group>"; };
 		FAA863C41D5C4DB2001187BC /* WebCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebCachedData.h; sourceTree = "<group>"; };
@@ -178,6 +184,17 @@
 		FAA863D01D5C4DC6001187BC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		FABB2D611D6EC05B0078FF57 /* UIButton+touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+touch.h"; sourceTree = "<group>"; };
 		FABB2D621D6EC05B0078FF57 /* UIButton+touch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+touch.m"; sourceTree = "<group>"; };
+		FACCFDA71DDEC50200730F79 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
+		FADCF3CA1D98BE48005E2FDD /* NotificateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificateController.h; sourceTree = "<group>"; };
+		FADCF3CB1D98BE48005E2FDD /* NotificateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificateController.m; sourceTree = "<group>"; };
+		FADCF3CD1D98C6D7005E2FDD /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		FADCF3CE1D98C6D7005E2FDD /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		FADCF3D01D98C6E4005E2FDD /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		FADCF3DE1D991CF1005E2FDD /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FADCF3E01D991D10005E2FDD /* aa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aa.jpg; sourceTree = "<group>"; };
+		FADCF3E11D991D10005E2FDD /* bb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bb.jpg; sourceTree = "<group>"; };
+		FADCF3E41D99232D005E2FDD /* UIAlertController+Tellphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Tellphone.h"; sourceTree = "<group>"; };
+		FADCF3E51D99232D005E2FDD /* UIAlertController+Tellphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Tellphone.m"; sourceTree = "<group>"; };
 		FAE7EE411D3607290031E184 /* StreamMediaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamMediaController.h; sourceTree = "<group>"; };
 		FAE7EE421D3607290031E184 /* StreamMediaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamMediaController.m; sourceTree = "<group>"; };
 		FAE7EE471D3608730031E184 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
@@ -233,12 +250,17 @@
 				FA3603781C8FCD4F001D124F /* AppDelegate.h */,
 				FA3603791C8FCD4F001D124F /* AppDelegate.m */,
 				FA3603B41C8FEB6F001D124F /* PrefixHeader.pch */,
+				FA3603C91C8FFC3B001D124F /* BASE */,
+				FA3603C01C8FF6E5001D124F /* Library */,
+				FA3603B51C8FEB87001D124F /* Categroy */,
 				FA9645A21CAE6D5F00A5B38B /* MainTableViewController.h */,
 				FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */,
+				FACCFDA71DDEC50200730F79 /* 6.jpg */,
 				FA36037B1C8FCD4F001D124F /* ViewController.h */,
 				FA36037C1C8FCD4F001D124F /* ViewController.m */,
 				FA3603BA1C8FEC25001D124F /* TestController.h */,
 				FA3603BB1C8FEC25001D124F /* TestController.m */,
+				FADCF3C91D98BE26005E2FDD /* Notification */,
 				FAA863BE1D5C4C89001187BC /* WebCache */,
 				FAA8CA2C1D584EE60076A51B /* Text */,
 				FA5951321D549985007F026F /* CoreAnimation */,
@@ -249,13 +271,10 @@
 				FA3F3E071D2276DC00BC33CF /* PhoneVC */,
 				FA3F3E061D2276D100BC33CF /* FontVC */,
 				FA40D50C1C9110F900500523 /* MapVC */,
-				FA3603C91C8FFC3B001D124F /* BASE */,
-				FA3603C01C8FF6E5001D124F /* Library */,
-				FA3603B51C8FEB87001D124F /* Categroy */,
 				FA3603CD1C8FFDEB001D124F /* Resource */,
 				FA36037E1C8FCD4F001D124F /* Main.storyboard */,
 				FA3603831C8FCD4F001D124F /* LaunchScreen.storyboard */,
-				FAA4C4551CB38C400057CF1E /* Media.xcassets */,
+				FADCF3DE1D991CF1005E2FDD /* Media.xcassets */,
 				FA3603861C8FCD4F001D124F /* Info.plist */,
 				FA3603751C8FCD4F001D124F /* Supporting Files */,
 			);
@@ -285,6 +304,8 @@
 				FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */,
 				FA40D5131C9118CD00500523 /* UIBarButtonItem+Extension.h */,
 				FA40D5141C9118CD00500523 /* UIBarButtonItem+Extension.m */,
+				FADCF3E41D99232D005E2FDD /* UIAlertController+Tellphone.h */,
+				FADCF3E51D99232D005E2FDD /* UIAlertController+Tellphone.m */,
 				FA3603C51C8FF97E001D124F /* UIFont+Name.h */,
 				FA3603C61C8FF97E001D124F /* UIFont+Name.m */,
 				FA5E2E491CFA8EC400EE6865 /* UIViewController+Deliver.h */,
@@ -338,6 +359,8 @@
 		FA3603CD1C8FFDEB001D124F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FADCF3E01D991D10005E2FDD /* aa.jpg */,
+				FADCF3E11D991D10005E2FDD /* bb.jpg */,
 				FA3603CE1C8FFE09001D124F /* iOS_FontName.gif */,
 			);
 			name = Resource;
@@ -471,6 +494,18 @@
 			name = Text;
 			sourceTree = "<group>";
 		};
+		FADCF3C91D98BE26005E2FDD /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				FADCF3CA1D98BE48005E2FDD /* NotificateController.h */,
+				FADCF3CB1D98BE48005E2FDD /* NotificateController.m */,
+				FADCF3CD1D98C6D7005E2FDD /* AlertView.h */,
+				FADCF3CE1D98C6D7005E2FDD /* AlertView.m */,
+				FADCF3D01D98C6E4005E2FDD /* AlertView.xib */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
 		FAE7EE401D3606B00031E184 /* StreamMedia */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,23 +599,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADCF3D11D98C6E4005E2FDD /* AlertView.xib in Resources */,
 				FAE7EE6B1D36096F0031E184 /* StreamMediaController.storyboard in Resources */,
 				FAE7EE561D3608740031E184 /* 1.mp4 in Resources */,
 				FA3E7DFC1D2A686400E1AA61 /* cc.jpg in Resources */,
+				FACCFDA81DDEC50200730F79 /* 6.jpg in Resources */,
 				FAE7EE641D3608740031E184 /* keepkeep@3x.png in Resources */,
 				FAE7EE631D3608740031E184 /* keepkeep@2x.png in Resources */,
 				FAE7EE591D3608740031E184 /* 4_circle_on@2x.png in Resources */,
 				FAE7EE5B1D3608740031E184 /* keep5@2x.png in Resources */,
 				FAE7EE5E1D3608740031E184 /* keep6plus@3x.png in Resources */,
+				FADCF3E31D991D10005E2FDD /* bb.jpg in Resources */,
 				FAE7EE5F1D3608740031E184 /* keep_logo.png in Resources */,
+				FADCF3E21D991D10005E2FDD /* aa.jpg in Resources */,
 				FAE7EE581D3608740031E184 /* 4_circle@2x.png in Resources */,
 				FAE7EE611D3608740031E184 /* keep_logo@3x.png in Resources */,
 				FA3603851C8FCD4F001D124F /* LaunchScreen.storyboard in Resources */,
 				FAE7EE5D1D3608740031E184 /* keep6@2x.png in Resources */,
 				FAE7EE5A1D3608740031E184 /* keep5.png in Resources */,
 				FAE7EE571D3608740031E184 /* 4_circle.png in Resources */,
+				FADCF3DF1D991CF1005E2FDD /* Media.xcassets in Resources */,
 				FA3603CF1C8FFE09001D124F /* iOS_FontName.gif in Resources */,
-				FAA4C4561CB38C400057CF1E /* Media.xcassets in Resources */,
 				FAE7EE621D3608740031E184 /* keepkeep.png in Resources */,
 				FA3603801C8FCD4F001D124F /* Main.storyboard in Resources */,
 				FAE7EE5C1D3608740031E184 /* keep6.png in Resources */,
@@ -603,6 +642,7 @@
 				FA3603C71C8FF97E001D124F /* UIFont+Name.m in Sources */,
 				FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */,
 				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
+				FADCF3CC1D98BE48005E2FDD /* NotificateController.m in Sources */,
 				FAA402481D53093F00263095 /* WQMenu.m in Sources */,
 				FAA863D41D5C4DC6001187BC /* Reachability.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
@@ -636,9 +676,11 @@
 				FA3603C31C8FF6F6001D124F /* GTMBase64.m in Sources */,
 				FA3F3E051D2276BE00BC33CF /* FontTableController.swift in Sources */,
 				FA40D5051C910AB700500523 /* UIImage+Color.m in Sources */,
+				FADCF3E61D99232D005E2FDD /* UIAlertController+Tellphone.m in Sources */,
 				FAA863C81D5C4DB2001187BC /* WebCachedData.m in Sources */,
 				FA67B5FE1CACBB780069C5C5 /* CommonTool.m in Sources */,
 				FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */,
+				FADCF3CF1D98C6D7005E2FDD /* AlertView.m in Sources */,
 				FA3E7DF71D2A680300E1AA61 /* Bezier&CGRefController.m in Sources */,
 				FAA863D21D5C4DC6001187BC /* README.md in Sources */,
 				FA3E7E031D2A6A0300E1AA61 /* RYCuteView.m in Sources */,

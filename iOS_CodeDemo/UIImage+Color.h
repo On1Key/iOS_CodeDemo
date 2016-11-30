@@ -23,4 +23,6 @@
  *  画矩形图片
  */
 + (UIImage *)imageWithRectEdgeColor:(UIColor *)color RectSize:(CGSize)size radius:(CGFloat)radius andLineWidth:(CGFloat)lineWidth;
+//改变图片颜色
+- (UIImage *)imageWithColor:(UIColor *)color;
 @end

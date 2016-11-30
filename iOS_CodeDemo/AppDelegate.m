@@ -8,12 +8,12 @@
 
 #import "AppDelegate.h"
 #import "MainTableViewController.h"
-
+#import <UserNotifications/UserNotifications.h>
+#import "NotificateController.h"
 // 3D Touch标签
 #define AppItem_BezerPath  @"BezerPath"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -35,8 +35,14 @@
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
     
+    //3D touch
     [self shortcutButton];
     
+    //本地通知注册 |:位移运算符
+    UIUserNotificationSettings *seting=[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    [[UIApplication sharedApplication]registerUserNotificationSettings:seting];
+    /**注册通知category*/
+    [self registNotiCategory];
     
     return YES;
 }
@@ -59,6 +65,22 @@
         CustomNaviViewController *naviVC = (CustomNaviViewController*)[UIApplication sharedApplication].delegate.window.rootViewController;
         [naviVC pushViewController:[NSClassFromString(@"Bezier_CGRefController") new] animated:YES];
     }
+}
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    NSLog(@"\n------------------%d------------------\n%s\n%@",__LINE__,__func__,notification.userInfo);
+}
+/**注册一个unnotification的category*/
+- (void)registNotiCategory{
+    
+    UNTextInputNotificationAction *textAct = [UNTextInputNotificationAction actionWithIdentifier:@"textAct" title:@"textAct" options:UNNotificationActionOptionAuthenticationRequired textInputButtonTitle:@"去noti查看输出" textInputPlaceholder:@"textPlaceholder"];
+    
+    UNNotificationAction *jumpAct = [UNNotificationAction actionWithIdentifier:@"jumpAct" title:@"jumpAct" options:UNNotificationActionOptionNone];
+    
+    UNNotificationAction *cancelAct = [UNNotificationAction actionWithIdentifier:@"cancelAct" title:@"cancelAct" options:UNNotificationActionOptionDestructive];
+    
+    UNNotificationCategory *inputCat = [UNNotificationCategory categoryWithIdentifier:@"input" actions:@[textAct,jumpAct,cancelAct] intentIdentifiers:@[] options:UNNotificationCategoryOptionCustomDismissAction];
+    
+    [[UNUserNotificationCenter currentNotificationCenter] setNotificationCategories:[NSSet setWithObject:inputCat]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
