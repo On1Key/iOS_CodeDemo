@@ -89,9 +89,15 @@ typedef NS_ENUM(NSInteger, TEST){
     UILabel *forceLabel = [[UILabel alloc] init];
     forceLabel.frame = CGRectMake(100, 100, 100, 50);
     forceLabel.numberOfLines = 0;
-    forceLabel.backgroundColor = [UIColor lightGrayColor];
+//    forceLabel.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:forceLabel];
     _forceLabel = forceLabel;
+    
+    CALayer *imageLayer = [CALayer layer];
+    imageLayer.contents = (id)[UIImage imageNamed:@"zan"].CGImage;
+    imageLayer.frame = CGRectMake(forceLabel.width - 20, forceLabel.height * 0.5 - 10, 20, 20);
+//    imageLayer.position = CGPointZero;
+    [forceLabel.layer addSublayer:imageLayer];
     
 }
 //按住移动or压力值改变时的回调
@@ -111,10 +117,13 @@ typedef NS_ENUM(NSInteger, TEST){
 //    [self openAnotherApp];
 //    地图页面
 //    [self pushToMapVC];
+    
+    
     _animateLayer.transform = CATransform3DMakeScale(1.5, 1.5, 1);  // 将图片大小按照X轴和Y轴缩放90%，永久
     [UIView animateWithDuration:0.3 animations:^{
         _animateImageView.transform = CGAffineTransformScale(_animateImageView.transform, 1.5, 1.5);
     }];
+    
     
 //    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
 //    animation.toValue = [NSValue valueWithCATransform3D:CATransform3DIdentity]; // 将目标值设为原值
@@ -340,6 +349,4 @@ typedef NS_ENUM(NSInteger, TEST){
     };
     [self.navigationController pushViewController:test animated:YES];
 }
-
-
 @end

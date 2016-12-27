@@ -24,6 +24,7 @@
     [super viewDidLoad];
     //测试block回传值
     [self testOfBlockDeliver];
+    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 #pragma mark - 测试block回传值
 /**
@@ -44,7 +45,9 @@
 }
 
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

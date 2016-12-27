@@ -18,10 +18,19 @@
 @property (nonatomic, strong) NSArray *codeVCS;
 /**srotyboard控制的控制器name数组*/
 @property (nonatomic, strong) NSArray *storyboardVCs;
+/**<#注释#>*/
+//@property (nonatomic, strong) UIView *redView;
 
 @end
 
 @implementation MainTableViewController
+//- (UIView *)redView{
+//    if (!_redView) {
+//        _redView = [UIView new];
+//        [self.tableView.superview addSubview:_redView];
+//    }
+//    return _redView;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,7 +51,26 @@
     
     
     
+    
 }
+//- (void)viewDidLayoutSubviews{
+//    [super viewDidLayoutSubviews];
+//    self.tableView.width = SCREEN_WIDTH * 0.5;
+//    
+//    self.redView.frame = CGRectMake(SCREEN_WIDTH * 0.5 + 20, 200, 100, 100);
+//    self.redView.backgroundColor = [UIColor redColor];
+//    
+//    NSLog(@"\n------------------%d------------------\n%s--%@--%@",__LINE__,__func__,NSStringFromClass(self.tableView.superview.class),self.tableView.superview);
+//    UILabel *label = [[UILabel alloc] init];
+//    label.frame = CGRectMake(SCREEN_WIDTH * 0.5 + 20, 64 + 20, 100, 100);
+//    label.backgroundColor = [UIColor lightGrayColor];
+//    label.text = @"label";
+//    label.font = [UIFont systemFontOfSize:14];
+//    label.textColor = [UIColor blackColor];
+//    label.numberOfLines = 0;
+//    label.textAlignment = NSTextAlignmentCenter;
+//    [self.tableView.superview addSubview:label];
+//}
 - (NSArray *)data{
     if (!_data) {
         
@@ -100,13 +128,16 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifer];
     }
-    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
-        NSLog(@"3D Touch  可用!");
-        //给cell注册3DTouch的peek（预览）和pop功能
-        [self registerForPreviewingWithDelegate:self sourceView:cell];
-    } else {
-        NSLog(@"3D Touch 无效");
+    if (IOS_VERSION >=9) {
+        if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+            NSLog(@"3D Touch  可用!");
+            //给cell注册3DTouch的peek（预览）和pop功能
+            [self registerForPreviewingWithDelegate:self sourceView:cell];
+        } else {
+            NSLog(@"3D Touch 无效");
+        }
     }
+    
     cell.textLabel.text = self.data[indexPath.row];
     return cell;
 }
@@ -115,7 +146,7 @@
 //    _cuteView.height = offset.y;
 //}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString *className = self.vcClasses[indexPath.row];
     UIViewController *nextVC;
     if ([self.codeVCS containsObject:className]) {
@@ -127,6 +158,7 @@
     
     //某些界面presnet过去
     if ([className containsString:@"Media"]) {
+        //自定义present动画
         nextVC.transitioningDelegate = self;
         nextVC.modalPresentationStyle = UIModalPresentationCustom;
         [self presentViewController:nextVC animated:YES completion:nil];

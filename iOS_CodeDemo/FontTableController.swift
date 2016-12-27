@@ -57,6 +57,10 @@ import UIKit
         
         return cell!
     }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        self.tableView.frame = CGRectMake(0, 0, 100, 667);
+//    }
     
 
 }

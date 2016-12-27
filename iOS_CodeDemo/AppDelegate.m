@@ -34,7 +34,7 @@
     [vc setUpTitle:@"Main"];
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
-    
+//    NSLog(@"\n------------------%d------------------\n%s==%@",__LINE__,__func__,NSHomeDirectory());
     //3D touch
     [self shortcutButton];
     

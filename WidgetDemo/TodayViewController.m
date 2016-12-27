@@ -34,14 +34,6 @@ static CGFloat const cellH = 50;
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    _backScrollView = [[UIScrollView alloc] init];
-//    _backScrollView.frame = self.view.bounds;
-//    [self.view addSubview:_backScrollView];
-//    
-//    _backScrollView.backgroundColor = [UIColor lightGrayColor];
-//    _backScrollView.contentSize = CGSizeMake(0, 200);
-    
-//    717 * 292  72
     
     _mainTable = [[UITableView alloc] initWithFrame:self.view.bounds];
     _mainTable.delegate = self;
@@ -66,10 +58,21 @@ static CGFloat const cellH = 50;
     WidgetModel *model = _widgetModel.models[indexPath.row];
     cell.textLabel.text = model.title;
     cell.detailTextLabel.text = model.content;
-    NSURL *photourl = [NSURL URLWithString:@"http://img1.imgtn.bdimg.com/it/u=3951583560,962001137&fm=21&gp=0.jpg"];
-    //url请求实在UI主线程中进行的
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:photourl]];//通过网络url获取uiimage
-    cell.imageView.image = image;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 处理耗时操作的代码块...
+        //url请求实在UI主线程中进行的
+        NSURL *photourl = [NSURL URLWithString:@"https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=426502052,480543478&fm=58"];
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:photourl]];//通过网络url获取uiimage
+        if (image) {
+            //通知主线程刷新
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //回调或者说是通知主线程刷新，
+                cell.imageView.image = image;
+                [tableView reloadData];
+            });
+        }
+        
+    });
     return cell;
 }
 
