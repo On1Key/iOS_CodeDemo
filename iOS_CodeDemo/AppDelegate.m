@@ -97,6 +97,8 @@
 /**注册一个unnotification的category*/
 - (void)registNotiCategory{
     
+    if (IOS_VERSION < 10.0) return;
+    
     UNTextInputNotificationAction *textAct = [UNTextInputNotificationAction actionWithIdentifier:@"textAct" title:@"textAct" options:UNNotificationActionOptionAuthenticationRequired textInputButtonTitle:@"去noti查看输出" textInputPlaceholder:@"textPlaceholder"];
     
     UNNotificationAction *jumpAct = [UNNotificationAction actionWithIdentifier:@"jumpAct" title:@"jumpAct" options:UNNotificationActionOptionNone];

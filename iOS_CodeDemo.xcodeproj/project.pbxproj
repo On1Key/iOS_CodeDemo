@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5E9A1851E6D3CCB002D442B /* WQMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E9A1841E6D3CCB002D442B /* WQMenu.m */; };
 		FA191DF61CA12FA7006DBB7A /* UITableView+Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */; };
 		FA3603771C8FCD4F001D124F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603761C8FCD4F001D124F /* main.m */; };
 		FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3603791C8FCD4F001D124F /* AppDelegate.m */; };
@@ -45,7 +46,6 @@
 		FA9645A41CAE6D5F00A5B38B /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A31CAE6D5F00A5B38B /* MainTableViewController.m */; };
 		FA9645A71CAE752C00A5B38B /* PhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9645A61CAE752C00A5B38B /* PhoneViewController.m */; };
 		FAA402451D5308EC00263095 /* WQItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402441D5308EC00263095 /* WQItemController.m */; };
-		FAA402481D53093F00263095 /* WQMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402471D53093F00263095 /* WQMenu.m */; };
 		FAA402831D5328B200263095 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402801D5328B200263095 /* DismissingAnimator.m */; };
 		FAA402841D5328B200263095 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA402821D5328B200263095 /* PresentingAnimator.m */; };
 		FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA4028B1D53364800263095 /* UIView+touchExtendInset.m */; };
@@ -116,6 +116,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C5E9A1831E6D3CCB002D442B /* WQMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQMenu.h; sourceTree = "<group>"; };
+		C5E9A1841E6D3CCB002D442B /* WQMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQMenu.m; sourceTree = "<group>"; };
 		FA191DF41CA12FA7006DBB7A /* UITableView+Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Keyboard.h"; sourceTree = "<group>"; };
 		FA191DF51CA12FA7006DBB7A /* UITableView+Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Keyboard.m"; sourceTree = "<group>"; };
 		FA3603721C8FCD4F001D124F /* iOS_CodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_CodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,8 +193,6 @@
 		FA9645A61CAE752C00A5B38B /* PhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneViewController.m; sourceTree = "<group>"; };
 		FAA402431D5308EC00263095 /* WQItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQItemController.h; sourceTree = "<group>"; };
 		FAA402441D5308EC00263095 /* WQItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQItemController.m; sourceTree = "<group>"; };
-		FAA402461D53093F00263095 /* WQMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQMenu.h; sourceTree = "<group>"; };
-		FAA402471D53093F00263095 /* WQMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQMenu.m; sourceTree = "<group>"; };
 		FAA4027F1D5328B200263095 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
 		FAA402801D5328B200263095 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
 		FAA402811D5328B200263095 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
@@ -488,8 +488,8 @@
 			children = (
 				FAA402431D5308EC00263095 /* WQItemController.h */,
 				FAA402441D5308EC00263095 /* WQItemController.m */,
-				FAA402461D53093F00263095 /* WQMenu.h */,
-				FAA402471D53093F00263095 /* WQMenu.m */,
+				C5E9A1831E6D3CCB002D442B /* WQMenu.h */,
+				C5E9A1841E6D3CCB002D442B /* WQMenu.m */,
 			);
 			name = WQItem;
 			sourceTree = "<group>";
@@ -764,7 +764,6 @@
 				FAA4028C1D53364800263095 /* UIView+touchExtendInset.m in Sources */,
 				FA40D5151C9118CD00500523 /* UIBarButtonItem+Extension.m in Sources */,
 				FADCF3CC1D98BE48005E2FDD /* NotificateController.m in Sources */,
-				FAA402481D53093F00263095 /* WQMenu.m in Sources */,
 				FAA863D41D5C4DC6001187BC /* Reachability.m in Sources */,
 				FA36037D1C8FCD4F001D124F /* ViewController.m in Sources */,
 				FA3E7DFB1D2A686400E1AA61 /* CustomView.m in Sources */,
@@ -772,6 +771,7 @@
 				FA4966BF1CA7664C00F027C1 /* KeyWordsView.m in Sources */,
 				FAE7EE671D36088F0031E184 /* BaseViewController.m in Sources */,
 				FA3603CC1C8FFC4E001D124F /* PathView.m in Sources */,
+				C5E9A1851E6D3CCB002D442B /* WQMenu.m in Sources */,
 				FAA863D11D5C4DC6001187BC /* NSString+Sha1.m in Sources */,
 				FA36037A1C8FCD4F001D124F /* AppDelegate.m in Sources */,
 				FA40D50B1C910D5100500523 /* MapController.m in Sources */,
@@ -1040,6 +1040,7 @@
 				FAACDC761DEE9DE3004A41DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

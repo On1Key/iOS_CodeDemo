@@ -138,7 +138,7 @@
     if (!_pageView) {
         _pageView = [[UIView alloc] init];
         _pageView.backgroundColor = [UIColor redColor];
-        [self addSubview:_pageView];
+//        [self addSubview:_pageView];
     }
     return _pageView;
 }
@@ -206,7 +206,7 @@
         CGRect pageF = _pageView.frame;
         pageF.size.width = pageW;
         _pageView.frame = pageF;
-        _pageView.center = CGPointMake(item.center.x - offsetX, _pageView.center.y);
+        _pageView.center = CGPointMake(item.center.x , _pageView.center.y);
         
     }];
     
@@ -253,6 +253,8 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
         [itemView addGestureRecognizer:tap];
     }
+    
+    [self.itemsScrollView addSubview:self.pageView];
     
     
     if (self.showCenterSpacingLine) {
