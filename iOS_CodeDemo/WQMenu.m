@@ -238,6 +238,19 @@
 
 /**创建界面*/
 - (void)createUI{
+    
+    //处理外部标题局部改变时导致滚动条从零开始滚动的问题
+    if (_titleNames.count != 0 && _titleNames.count == _itemViews.count) {
+        
+        for (int i = 0; i < _titleNames.count; i ++) {
+            WQItem *itemView = _itemViews[i];
+            itemView.title = _titleNames[i];
+        }
+        
+        
+        return;
+    }
+    
     [self clearData];
     _itemViews = [NSMutableArray array];
     _itemLengths = [NSMutableArray array];
