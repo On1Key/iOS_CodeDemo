@@ -14,7 +14,7 @@ import UIKit
 
     var dataResource : [String]!{
         get{
-            return UIFont.familyNames()
+            return UIFont.familyNames
         }
     }
     
@@ -29,23 +29,23 @@ import UIKit
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return dataResource.count
     }
     
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reu = "res"
-        var cell = tableView.dequeueReusableCellWithIdentifier(reu)
+        var cell = tableView.dequeueReusableCell(withIdentifier: reu)
         if cell == nil {
-            cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: reu)
-            cell?.selectionStyle = UITableViewCellSelectionStyle.None
+            cell = UITableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: reu)
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
         }
         
         let fontName = dataResource[indexPath.row]
@@ -53,7 +53,7 @@ import UIKit
         let font = UIFont.init(name: fontName, size: 14)
         cell?.textLabel?.font = font
         cell?.detailTextLabel?.text = fontName
-        cell?.detailTextLabel?.font = UIFont.systemFontOfSize(12)
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 12)
         
         return cell!
     }

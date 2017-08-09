@@ -669,7 +669,7 @@
 					FA3603711C8FCD4F001D124F = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = LGTKM77CP2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -954,7 +954,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS_CodeDemo/iOS_CodeDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -972,7 +972,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "yang.iOS-CodeDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "iOS_CodeDemo/iOS_CodeDemo-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
